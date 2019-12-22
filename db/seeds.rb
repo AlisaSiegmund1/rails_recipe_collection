@@ -66,3 +66,9 @@ recipe_ingredients << RecipeIngredient.create!(recipe: recipes[3], ingredient: i
 puts "Adding 3 Ingredients to each Recipe"
 
 
+puts "Creating User"
+a_user = []
+a_user << User.create!(email: "alisa.siegmund@gmail.com", password: "123456", password_confirmation: "123456")
+puts "Created 1 User..."
+
+
