@@ -1,8 +1,19 @@
-.card-img-top {
-    height: 400px;
+.recipe-card {
+  margin: 20px;
+}
+
+.recipe-card-img-top {
+  height: 250px;
+  width: 200px;
+  background-color: blue;
   }
 
-.card-body {
+.recipe-card-body {
   background-color: black;
-  color: white;
+  text-align: center;
+  padding: 5px 0;
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
