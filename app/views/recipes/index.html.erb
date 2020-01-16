@@ -1,0 +1,15 @@
+<p> Recipe INDEX </p>
+
+<p> All Recipes: </p>
+<div class="recipe-container">
+  <% @recipes.each do |recipe| %>
+    <div class="recipe-card">
+      <div class="recipe-card-img-top">
+      </div>
+      <div class="recipe-card-body">
+        <%= link_to recipe.name, recipe_path(recipe) %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
