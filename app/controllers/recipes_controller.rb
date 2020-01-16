@@ -8,12 +8,14 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.new
   end
 
   def create
   end
 
   def edit
+    set_recipe
   end
 
   def update
@@ -27,6 +29,10 @@ class RecipesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :photo)
   end
 
 end
