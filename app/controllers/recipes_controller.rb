@@ -3,13 +3,14 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
+  def show
+    set_recipe
+  end
+
   def new
   end
 
   def create
-  end
-
-  def show
   end
 
   def edit
@@ -20,4 +21,12 @@ class RecipesController < ApplicationController
 
   def destroy
   end
+
+
+  private
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
 end
