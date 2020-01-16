@@ -1,5 +1,18 @@
-<h1>Show specific Recipe</h1>
+<h3><%= @recipe.name %></h3>
 
-<%= @recipe.name %>
+
+<p>Description:</p>
+<%= @recipe.description %>
 
 <%= cl_image_tag @recipe.photo.key %>
+
+<%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+
+
+<h3>Add a new ingredient</h3>
+<div style="width: 500px">
+  <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
+   <%= f.input :ingredient_id, collection: Ingredient.all %>
+    <%= f.submit "Add ingredient", class: "btn-shadow" %>
+  <% end %>
+</div>

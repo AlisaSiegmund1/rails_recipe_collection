@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
 
   def show
     set_recipe
+    @ingredient = RecipeIngredient.new
   end
 
   def new
@@ -17,6 +18,12 @@ class RecipesController < ApplicationController
   end
 
   def create
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
+      redirect_to recipes_path
+    else
+      render :new
+    end
   end
 
   def edit
