@@ -1,6 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    if params[:category_type].blank?
+      @recipes = Recipe.all
+    else
+      @recipes = Recipe.select { |r| r[:category] == params[:category_type]}
+    end
+    # @recipes = Recipe.all
   end
 
   def show
@@ -19,6 +24,9 @@ class RecipesController < ApplicationController
   end
 
   def update
+    set_recipe
+    @recipe.update(recipe_params)
+    redirect_to recipe_path(@recipe)
   end
 
   def destroy
@@ -32,7 +40,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :photo)
+    params.require(:recipe).permit(:name, :description, :category, :photo)
   end
 
 end

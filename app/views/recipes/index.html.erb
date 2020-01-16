@@ -1,10 +1,18 @@
 <h1>Recipe Index</h1>
 
 <p> All Recipes: </p>
+
+<form action="/recipes" method="get">
+  <input type="text" name="category_type" placeholder="What kind of food?[sweet or savory]">
+  <input type="submit">
+</form>
+
+
 <div class="recipe-container">
   <% @recipes.each do |recipe| %>
     <div class="recipe-card">
       <div class="recipe-card-img-top">
+        <%= cl_image_tag recipe.photo.key %>
       </div>
       <div class="recipe-card-body">
         <%= link_to recipe.name, recipe_path(recipe) %>

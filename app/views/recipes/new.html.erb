@@ -4,7 +4,6 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :category, collection: ['savory', 'sweet']%>
-  <%= f.input :photo %>
-  <%= f.input :photo_attachment, as: :hidden %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "add recipe", class: "btn btn-outline-secondary" %>
 <% end %>
