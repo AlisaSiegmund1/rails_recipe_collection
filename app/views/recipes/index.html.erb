@@ -12,7 +12,7 @@
   <% @recipes.each do |recipe| %>
     <div class="recipe-card">
       <div class="recipe-card-img-top">
-        <%= cl_image_tag recipe.photo.key %>
+        <%= cl_image_tag recipe.photo.key, width: 200, height: 250, crop: :fill %>
       </div>
       <div class="recipe-card-body">
         <%= link_to recipe.name, recipe_path(recipe) %>
