@@ -5,7 +5,10 @@
       <%= f.input :description %>
       <%= f.input :category, collection: ['savory', 'sweet']%>
       <%= f.input :photo, as: :file%>
-      <%= f.submit "Save changes", class: "btn-shadow" %>
+      <div class="d-flex">
+        <%= f.submit "Save changes", class: "btn-shadow" %>
+        <%= link_to "Back", recipe_path(@recipe), class: "btn-shadow ml-3" %>
+      </div>
     <% end %>
   </div>
 
