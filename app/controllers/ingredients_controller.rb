@@ -9,7 +9,7 @@ class IngredientsController < ApplicationController
     recipe = Recipe.find(params[:recipe_id])
     ingredient.recipe = recipe
     ingredient.save!
-    redirect_to recipe_path(recipe)
+    redirect_to edit_recipe_path(recipe)
   end
 
   def destroy

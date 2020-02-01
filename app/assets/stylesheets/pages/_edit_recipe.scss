@@ -1,0 +1,28 @@
+input#recipe_name {
+    width: 670px;
+}
+
+
+textarea#recipe_description {
+    height: 250px;
+}
+
+
+input#ingredient_dose {
+    width: 70px;
+}
+
+input#ingredient_unit {
+    width: 100px;
+}
+
+
+.form-group {
+    margin-bottom: 1rem;
+    margin-right: 20px;
+}
+
+
+.all-ingredients {
+  height: 350px;
+}

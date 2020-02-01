@@ -1,27 +1,36 @@
-<h3><%= @recipe.name %></h3>
+<div class="recipe-show-banner">
+  <%= cl_image_tag @recipe.photo.key, class: 'banner-img'%>
+  <div class="card-img-overlay">
+    <h5 class="card-title"><%= @recipe.name %></h5>
+  </div>
+</div>
 
 
-<p>Description:</p>
-<%= @recipe.description %>
 
-<% @recipe.ingredients.each do |ingredient| %>
-  <%= ingredient.description %>
-  <%= ingredient.dose %>
-  <%= ingredient.unit %>
-  <% end %>
+<div class="recipe-container d-flex justify-content-between">
 
- <div class="form-dose" style="text-align: left">
-        <h3>Add a new ingredient</h3>
-        <div style="width: 500px">
-          <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
-           <%= f.input :description%>
-           <%= f.input :dose %>
-           <%= f.input :unit %>
-            <%= f.submit "Add ingredient", class: "btn-shadow" %>
-          <% end %>
-        </div>
-      </div>
+  <div class="tags text-center">
+    <%= @recipe.category %>
+    <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+    <%= link_to '[delete]',  recipe_path(@recipe),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+  </div>
 
-<%= cl_image_tag @recipe.photo.key %>
+  <div class=" container-fluid content d-flex flex-wrap">
+    <div class="recipe-ingredients">
+      <% @recipe.ingredients.each do |ingredient| %>
+        <ul>
+          <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
+        </ul>
+      <% end %>
 
-<%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
+
+    </div>
+    <div class="description">
+    <p>Description:</p>
+    <%= @recipe.description %>
+    </div>
+  </div>
+</div>
+
