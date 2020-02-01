@@ -2,8 +2,10 @@
 
 <%= simple_form_for (@recipe) do |f| %>
   <%= f.input :name %>
-  <%= f.input :description %>
   <%= f.input :category, collection: ['savory', 'sweet']%>
+  <%= f.input :description %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "add recipe", class: "btn btn-outline-secondary" %>
 <% end %>
+
+

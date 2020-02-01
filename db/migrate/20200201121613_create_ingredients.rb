@@ -1,8 +1,10 @@
 class CreateIngredients < ActiveRecord::Migration[5.2]
   def change
     create_table :ingredients do |t|
-      t.string :name
-      t.references :dose, foreign_key: true
+      t.string :description
+      t.integer :dose
+      t.string :unit
+      t.references :recipe, foreign_key: true
 
       t.timestamps
     end

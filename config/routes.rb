@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'recipes#index'
 
   resources :recipes do
-    resources :recipe_ingredients, only: [:new, :create, :edit]
+    resources :ingredients, only: [:new, :create, :edit]
   end
 
 
