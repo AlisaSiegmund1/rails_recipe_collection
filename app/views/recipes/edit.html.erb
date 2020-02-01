@@ -1,9 +1,39 @@
-<h1>Edit specific Recipe</h1>
+<div class="recipe-container container-fluid content justify-content-between">
+  <div class="recipe-edit">
+    <%= simple_form_for (@recipe) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :category, collection: ['savory', 'sweet']%>
+      <%= f.input :photo, as: :file%>
+      <%= f.submit "Save changes", class: "btn-shadow" %>
+    <% end %>
+  </div>
 
-<%= simple_form_for (@recipe) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :category, collection: ['savory', 'sweet']%>
-  <%= f.input :photo, as: :file%>
-  <%= f.submit "edit recipe", class: "btn btn-outline-secondary" %>
-<% end %>
+  <div class="form-ingredient d-flex flex-column" style="text-align: left">
+      <h3>All Ingredients</h3>
+    <div class="all-ingredients d-flex flex-column  flex-wrap">
+      <% @recipe.ingredients.each do |ingredient| %>
+        <ul>
+          <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
+        </ul>
+      <% end %>
+
+    </div>
+
+    <div style="width: 500px">
+    <h3>Add a new ingredient</h3>
+      <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
+      <div class="d-flex">
+        <%= f.input :description%>
+        <%= f.input :dose %>
+        <%= f.input :unit %>
+        <%= f.submit "Add", class: "btn-shadow" %>
+
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+

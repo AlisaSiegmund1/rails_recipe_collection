@@ -10,7 +10,6 @@ class RecipesController < ApplicationController
 
   def show
     set_recipe
-    @ingredient = Ingredient.new
 
   end
 
@@ -29,6 +28,7 @@ class RecipesController < ApplicationController
 
   def edit
     set_recipe
+    @ingredient = Ingredient.new
   end
 
   def update
@@ -38,6 +38,9 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    set_recipe
+    @recipe.delete
+    redirect_to root_path
   end
 
 
