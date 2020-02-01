@@ -6,32 +6,32 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Creating Doses"
+# puts "Creating Doses"
 
-doses = []
-d_des = ['100g', '200g', '50g', '250g']
+# doses = []
+# d_des = ['100g', '200g', '50g', '250g']
 
-doses << Dose.create!(description: d_des[0])
-doses << Dose.create!(description: d_des[1])
-doses << Dose.create!(description: d_des[2])
-doses << Dose.create!(description: d_des[3])
+# doses << Dose.create!(description: d_des[0])
+# doses << Dose.create!(description: d_des[1])
+# doses << Dose.create!(description: d_des[2])
+# doses << Dose.create!(description: d_des[3])
 
-puts "Created 4 Doses"
+# puts "Created 4 Doses"
 
 
-puts "Creating Ingredients"
+# puts "Creating Ingredients"
 
-ingredients = []
-i_names = ['flour', 'butter', 'sugar', 'cinnamon', 'raisins', 'milk']
+# ingredients = []
+# i_names = ['flour', 'butter', 'sugar', 'cinnamon', 'raisins', 'milk']
 
-ingredients << Ingredient.create!(name: i_names[0], dose: doses[0])
-ingredients << Ingredient.create!(name: i_names[1], dose: doses[1])
-ingredients << Ingredient.create!(name: i_names[2], dose: doses[2])
-ingredients << Ingredient.create!(name: i_names[3], dose: doses[3])
-ingredients << Ingredient.create!(name: i_names[4], dose: doses[2])
-ingredients << Ingredient.create!(name: i_names[5], dose: doses[1])
+# ingredients << Ingredient.create!(name: i_names[0], dose: doses[0])
+# ingredients << Ingredient.create!(name: i_names[1], dose: doses[1])
+# ingredients << Ingredient.create!(name: i_names[2], dose: doses[2])
+# ingredients << Ingredient.create!(name: i_names[3], dose: doses[3])
+# ingredients << Ingredient.create!(name: i_names[4], dose: doses[2])
+# ingredients << Ingredient.create!(name: i_names[5], dose: doses[1])
 
-puts "Created 6 Ingredients"
+# puts "Created 6 Ingredients"
 
 puts "Creating Recipes"
 
@@ -46,24 +46,24 @@ recipes << Recipe.create!(name: r_names[3], category: r_cat[0])
 
 puts "Created 4 Recipes"
 
-puts "Creating Recipe-Ingredients"
+# puts "Creating Recipe-Ingredients"
 
-recipe_ingredients = []
+# recipe_ingredients = []
 
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[0], ingredient: ingredients[0])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[0], ingredient: ingredients[1])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[0], ingredient: ingredients[2])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[1], ingredient: ingredients[2])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[1], ingredient: ingredients[3])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[1], ingredient: ingredients[5])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[2], ingredient: ingredients[0])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[2], ingredient: ingredients[1])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[2], ingredient: ingredients[4])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[3], ingredient: ingredients[0])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[3], ingredient: ingredients[4])
-recipe_ingredients << RecipeIngredient.create!(recipe: recipes[3], ingredient: ingredients[3])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[0], ingredient: ingredients[0])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[0], ingredient: ingredients[1])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[0], ingredient: ingredients[2])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[1], ingredient: ingredients[2])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[1], ingredient: ingredients[3])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[1], ingredient: ingredients[5])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[2], ingredient: ingredients[0])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[2], ingredient: ingredients[1])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[2], ingredient: ingredients[4])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[3], ingredient: ingredients[0])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[3], ingredient: ingredients[4])
+# recipe_ingredients << RecipeIngredient.create!(recipe: recipes[3], ingredient: ingredients[3])
 
-puts "Adding 3 Ingredients to each Recipe"
+# puts "Adding 3 Ingredients to each Recipe"
 
 
 puts "Creating User"

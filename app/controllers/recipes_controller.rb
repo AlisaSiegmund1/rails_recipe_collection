@@ -10,7 +10,8 @@ class RecipesController < ApplicationController
 
   def show
     set_recipe
-    @ingredient = RecipeIngredient.new
+    @ingredient = Ingredient.new
+
   end
 
   def new

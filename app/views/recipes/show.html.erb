@@ -4,15 +4,24 @@
 <p>Description:</p>
 <%= @recipe.description %>
 
+<% @recipe.ingredients.each do |ingredient| %>
+  <%= ingredient.description %>
+  <%= ingredient.dose %>
+  <%= ingredient.unit %>
+  <% end %>
+
+ <div class="form-dose" style="text-align: left">
+        <h3>Add a new ingredient</h3>
+        <div style="width: 500px">
+          <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
+           <%= f.input :description%>
+           <%= f.input :dose %>
+           <%= f.input :unit %>
+            <%= f.submit "Add ingredient", class: "btn-shadow" %>
+          <% end %>
+        </div>
+      </div>
+
 <%= cl_image_tag @recipe.photo.key %>
 
 <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
-
-
-<h3>Add a new ingredient</h3>
-<div style="width: 500px">
-  <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
-   <%= f.input :ingredient_id, collection: Ingredient.all %>
-    <%= f.submit "Add ingredient", class: "btn-shadow" %>
-  <% end %>
-</div>
