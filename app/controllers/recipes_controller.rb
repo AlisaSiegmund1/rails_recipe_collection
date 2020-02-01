@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   def show
     set_recipe
     @ingredient = Ingredient.new
+
   end
 
   def new
@@ -18,7 +19,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-     @recipe = Recipe.new(recipe_params)
+    @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to recipes_path
     else
