@@ -13,12 +13,16 @@
   </div>
 
   <div class="form-ingredient d-flex flex-column" style="text-align: left">
-      <h3>All Ingredients</h3>
+      <h3>Zutaten:</h3>
     <div class="all-ingredients d-flex flex-column  flex-wrap">
-      <% @recipe.ingredients.each do |ingredient| %>
-        <ul>
-          <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
-        </ul>
+      <% if @recipe.ingredients.empty? == false %>
+        <% @recipe.ingredients.each do |ingredient| %>
+          <ul>
+            <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
+          </ul>
+        <% end %>
+      <% else %>
+        <p> Bitte füge Zutaten zu dem Rezeot hinzu.</p>
       <% end %>
 
     </div>

@@ -1,11 +1,13 @@
-<h1>New Recipe</h1>
+  <h3 class="text-center">New Recipe</h3>
 
-<%= simple_form_for (@recipe) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :category, collection: ['savory', 'sweet']%>
-  <%= f.input :description %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "add recipe", class: "btn btn-outline-secondary" %>
-<% end %>
+<div class="recipe-container content justify-content-center align-self-center">
+  <%= simple_form_for (@recipe) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :category, collection: ['savory', 'sweet']%>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit "Rezept hinzufügen", class: "btn-shadow" %>
+  <% end %>
+
+</div>
 
 
