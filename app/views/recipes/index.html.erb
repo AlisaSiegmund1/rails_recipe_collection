@@ -1,24 +1,29 @@
-<div class="container text-center filter-form d-flex">
-  <div class="filter">
-    <form action="/recipes" method="get">
-      <input id="field" type="text" name="category_type" placeholder="What kind of food?[sweet or savory]">
-      <input type="submit">
-    </form>
+<div class="content-container">
+  <div class="text-right mr-3">
+    <%= link_to "Neues Rezept", new_recipe_path, class: "btn-shadow" %>
   </div>
-  <%= link_to "Neues Rezept", new_recipe_path, class: "btn-shadow" %>
-</div>
 
-
-<div class="recipe-container">
-  <% @recipes.each do |recipe| %>
-    <div class="recipe-card">
-      <div class="recipe-card-img-top">
-        <%= cl_image_tag recipe.photo.key, width: 200, height: 250, crop: :fill %>
-      </div>
-      <div class="recipe-card-body">
-        <%= link_to recipe.name, recipe_path(recipe) %>
-      </div>
+  <div class="container text-center filter-form">
+    <div class="filter">
+      <form action="/recipes" method="get">
+        <input id="field" type="text" name="category_type" placeholder="What kind of food?[sweet or savory]">
+        <input type="submit">
+      </form>
     </div>
-  <% end %>
+  </div>
 
+  <div class="recipe-container">
+    <% @recipes.each do |recipe| %>
+      <div class="recipe-card">
+        <div class="recipe-card-img-top">
+          <%= cl_image_tag recipe.photo.key, width: 200, height: 250, crop: :fill %>
+        </div>
+        <div class="recipe-card-body">
+          <%= link_to recipe.name, recipe_path(recipe) %>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
 </div>
+
