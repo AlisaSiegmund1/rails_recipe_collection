@@ -1,9 +1,12 @@
 <div class="recipe-container container-fluid content justify-content-between">
   <div class="recipe-edit">
     <%= simple_form_for (@recipe) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :description %>
-      <%= f.input :category, collection: ['savory', 'sweet']%>
+      <h3>Name:</h3>
+      <%= f.input :name, label:false%>
+      <h3>Zubreitung:</h3>
+      <%= f.input :description, label:false %>
+      <h3>Kategorie:</h3>
+      <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:false%>
       <div class="d-flex">
         <%= f.submit "Save changes", class: "btn-shadow" %>
         <%= link_to "Back", recipe_path(@recipe), class: "btn-shadow ml-3" %>
@@ -27,7 +30,7 @@
     </div>
 
     <div style="width: 500px">
-    <h3>Add a new ingredient</h3>
+    <h3>Neue Zutaten:</h3>
       <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
       <div class="d-flex">
         <%= f.input :dose, placeholder: 'z.B. 100', label:false%>

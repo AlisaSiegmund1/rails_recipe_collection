@@ -3,6 +3,7 @@ class RecipesController < ApplicationController
     if params[:category_type].blank?
       @recipes = Recipe.all
     else
+      raise
       @recipes = Recipe.select { |r| r[:category] == params[:category_type]}
     end
     # @recipes = Recipe.all
