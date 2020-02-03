@@ -1,36 +1,48 @@
-<div class="recipe-show-banner">
-  <%= cl_image_tag @recipe.photo.key, class: 'banner-img'%>
-  <div class="card-img-overlay">
-    <h5 class="card-title"><%= @recipe.name %></h5>
-  </div>
-</div>
-
-
-
-<div class="recipe-container d-flex justify-content-between">
-
-  <div class="tags text-center">
-    <%= @recipe.category %>
-    <%= link_to "Edit Recipe", edit_recipe_path(@recipe) %>
-    <%= link_to '[delete]',  recipe_path(@recipe),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
+<div class="content-container">
+  <div class="recipe-show-banner">
+    <%= cl_image_tag @recipe.photo.key, class: 'banner-img'%>
+    <div class="card-img-overlay">
+      <h5 class="card-title"><%= @recipe.name %></h5>
+    </div>
   </div>
 
-  <div class=" container-fluid content d-flex flex-wrap">
-    <div class="recipe-ingredients">
-      <% @recipe.ingredients.each do |ingredient| %>
-        <ul>
-          <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
-        </ul>
+
+
+  <div class="recipe-container d-flex justify-content-between">
+
+    <div class="tags d-flex justify-content-between">
+      <div class="btn-category">
+        <%= @recipe.category %>
+      </div>
+      <div class="flex-grow-1">
+      </div>
+      <%= link_to edit_recipe_path(@recipe) do %>
+        <i class="fas fa-pen"></i>
       <% end %>
-
-
+      <%= link_to recipe_path(@recipe),
+                method: :delete,
+                data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
     </div>
-    <div class="description">
-    <p>Description:</p>
-    <%= @recipe.description %>
+
+    <div class=" container-fluid content d-flex flex-wrap">
+      <div class="recipe-ingredients mb-3">
+        <h3>Zutaten:</h3>
+        <% @recipe.ingredients.each do |ingredient| %>
+          <ul>
+            <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
+          </ul>
+        <% end %>
+
+
+      </div>
+      <div class="description">
+      <h3>Zubereitung:</h3>
+      <%= @recipe.description %>
+      </div>
     </div>
   </div>
+
 </div>
 
