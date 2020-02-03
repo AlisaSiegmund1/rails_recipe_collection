@@ -1,8 +1,11 @@
-<div class="container text-center filter-form">
-  <form action="/recipes" method="get">
-    <input id="field" type="text" name="category_type" placeholder="What kind of food?[sweet or savory]">
-    <input type="submit">
-  </form>
+<div class="container text-center filter-form d-flex">
+  <div class="filter">
+    <form action="/recipes" method="get">
+      <input id="field" type="text" name="category_type" placeholder="What kind of food?[sweet or savory]">
+      <input type="submit">
+    </form>
+  </div>
+  <%= link_to "Neues Rezept", new_recipe_path, class: "btn-shadow" %>
 </div>
 
 
