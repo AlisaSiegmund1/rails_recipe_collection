@@ -1,9 +1,9 @@
-  <h3 class="text-center">New Recipe</h3>
+  <h3 class="text-center">Neues Rezept</h3>
 
 <div class="recipe-container content justify-content-center align-self-center">
   <%= simple_form_for (@recipe) do |f| %>
     <%= f.input :name %>
-    <%= f.input :category, collection: ['savory', 'sweet']%>
+    <%= f.input :category, collection: ['Herzhaft', 'Süß']%>
     <%= f.input :photo, as: :file %>
     <%= f.submit "Rezept hinzufügen", class: "btn-shadow" %>
   <% end %>
