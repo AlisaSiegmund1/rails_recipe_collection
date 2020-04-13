@@ -18,12 +18,18 @@
         <div class="all-ingredients d-flex flex-column  flex-wrap">
           <% if @recipe.ingredients.empty? == false %>
             <% @recipe.ingredients.each do |ingredient| %>
-              <ul>
-                <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
+              <ul style="list-style-type:none; padding-left: 0;">
+                 <li>
+                 <%= link_to recipe_ingredient_path(ingredient),
+                  method: :delete,
+                  data: { confirm: "Bist du dir sicher?" } do %>
+                  <i class="fas fa-trash" style="font-size: 10px"></i>
+                <% end %>
+               <%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>
               </ul>
             <% end %>
           <% else %>
-            <p> Bitte füge Zutaten zu dem Rezeot hinzu.</p>
+            <p> Bitte füge Zutaten zu dem Rezept hinzu.</p>
           <% end %>
 
         </div>

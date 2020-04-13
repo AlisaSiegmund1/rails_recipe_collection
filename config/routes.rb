@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'recipes#index'
 
   resources :recipes do
-    resources :ingredients, only: [:new, :create, :edit]
+    resources :ingredients, only: [:new, :create, :destroy]
   end
 
 
