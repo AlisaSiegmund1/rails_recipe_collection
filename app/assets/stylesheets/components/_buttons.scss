@@ -4,21 +4,17 @@
   border: 0.1px solid black;
   background-color: white;
   box-shadow: 6px 6px 0 0.5px black;
+  font-weight:bold;
   transition: background 0.5s ease;
-  a {
-    font-weight: bold;
-    color: black;
-  }
+  color: black;
 }
 .btn-shadow:hover {
   padding: 15px 25px;
   background-color: black;
   font-weight:bold;
-  box-shadow: 6px 6px 0 0.5px white;
-  a {
-    color: white;
-    text-decoration: none;
-  }
+  color: white;
+  text-decoration: none;
+  box-shadow: 6px 6px 0 0.5px #F4F4F4;
 }
 
 .btn-shadow-small {
@@ -26,10 +22,16 @@
   background-color: white;
   box-shadow: 6px 6px 0 0.5px black;
   transition: background 0.5s ease;
-  a {
-    font-weight:bold;
-    color: black;
-  }
+  font-weight:bold;
+  color: black;
+
+}
+.btn-shadow-small:hover {
+  background-color: black;
+  font-weight:bold;
+  color: white;
+  text-decoration: none;
+  box-shadow: 6px 6px 0 0.5px #F4F4F4;
 }
 
 
