@@ -1,58 +1,61 @@
-<div class="content-container">
-  <div class="recipe-show-banner">
-    <%= cl_image_tag @recipe.photo.key, class: 'banner-img'%>
-    <div class="card-img-overlay">
-      <h5 class="card-title"><%= @recipe.name %></h5>
-    </div>
-  </div>
+<div class="base-container">
 
-
-
-  <div class="recipe-container d-flex justify-content-between">
-
-    <div class="tags d-flex justify-content-between">
-      <div class="btn-category">
-        <%= @recipe.category %>
+  <div class="content-container">
+    <div class="recipe-show-banner">
+      <%= cl_image_tag @recipe.photo.key, class: 'banner-img'%>
+      <div class="card-img-overlay">
+        <h5 class="card-title"><%= @recipe.name %></h5>
       </div>
-      <div class="flex-grow-1">
-      </div>
-      <%= link_to edit_recipe_path(@recipe) do %>
-       <i class="fas fa-pen"> Rezept bearbeiten</i>
-      <% end %>
-      <%= link_to recipe_path(@recipe),
-                method: :delete,
-                data: { confirm: "Are you sure?" } do %>
-        <i class="fas fa-trash"></i>
-      <% end %>
     </div>
 
-    <div class=" container-fluid content d-flex flex-wrap">
-      <div class="recipe-ingredients mb-3">
-        <h3>Zutaten:</h3>
-        <% if @recipe.ingredients.empty? == false %>
-          <% @recipe.ingredients.each do |ingredient| %>
-            <ul>
-              <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
-            </ul>
-          <% end %>
-        <% else %>
-          <span> Zutaten hinzufügen </span>
-          <%= link_to edit_recipe_path(@recipe) do %>
-            <i class="fas fa-pen"></i>
-          <% end %>
+
+
+    <div class="recipe-container d-flex justify-content-between">
+
+      <div class="tags d-flex justify-content-between">
+        <div class="btn-category">
+          <%= @recipe.category %>
+        </div>
+        <div class="flex-grow-1">
+        </div>
+        <%= link_to edit_recipe_path(@recipe) do %>
+         <i class="fas fa-pen"> Rezept bearbeiten</i>
         <% end %>
-
+        <%= link_to recipe_path(@recipe),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
       </div>
-      <div class="description">
-      <h3>Zubereitung:</h3>
-      <% if @recipe.description.nil? == false %>
-        <%= @recipe.description %>
-      <% else %>
-        <span> Da fehlt doch was - bitte füge eine Beschreibung der Zubereitung hinzu. </span>
-      <% end %>
+
+      <div class=" container-fluid content d-flex flex-wrap">
+        <div class="recipe-ingredients mb-3">
+          <h3>Zutaten:</h3>
+          <% if @recipe.ingredients.empty? == false %>
+            <% @recipe.ingredients.each do |ingredient| %>
+              <ul>
+                <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
+              </ul>
+            <% end %>
+          <% else %>
+            <span> Zutaten hinzufügen </span>
+            <%= link_to edit_recipe_path(@recipe) do %>
+              <i class="fas fa-pen"></i>
+            <% end %>
+          <% end %>
+
+        </div>
+        <div class="description">
+        <h3>Zubereitung:</h3>
+        <% if @recipe.description.nil? == false %>
+          <%= @recipe.description %>
+        <% else %>
+          <span> Da fehlt doch was - bitte füge eine Beschreibung der Zubereitung hinzu. </span>
+        <% end %>
+        </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
 
