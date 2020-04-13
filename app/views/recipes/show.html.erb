@@ -2,9 +2,14 @@
 
   <div class="content-container">
     <div class="recipe-show-banner">
-      <%= cl_image_tag @recipe.photo.key, class: 'banner-img'%>
-      <div class="card-img-overlay">
-        <h5 class="card-title"><%= @recipe.name %></h5>
+      <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @recipe.photo.key%>)'>
+      <div class="d-flex flex-column align-items-center">
+        <%= @recipe.name %>
+          <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
+            <%= @recipe.category %>
+          </div>
+
+      </div>
       </div>
     </div>
 
@@ -13,9 +18,6 @@
     <div class="recipe-container d-flex justify-content-between">
 
       <div class="tags d-flex justify-content-between">
-        <div class="btn-category">
-          <%= @recipe.category %>
-        </div>
         <div class="flex-grow-1">
         </div>
         <%= link_to edit_recipe_path(@recipe) do %>

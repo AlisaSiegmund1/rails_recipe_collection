@@ -11,20 +11,20 @@
   margin-bottom: 30px;
   padding: 0 30px;
   object-fit: cover;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
 }
 
-.card-img-overlay {
-    position: absolute;
-    text-align: center;
-    top: 152px;
-    right: 34px;
-    height: 30px;
-    bottom: 0;
-    left: 0;
-    padding: 1.25rem;
-    h5 {
-      font-weight: bolder;
-      font-size: 27px;
-      color: white;
-    }
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
