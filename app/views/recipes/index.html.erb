@@ -20,7 +20,12 @@
             <%= cl_image_tag recipe.photo.key, width: 200, height: 250, crop: :fill %>
           </div>
           <div class="recipe-card-body">
-            <%= link_to recipe.name, recipe_path(recipe) %>
+            <% if recipe.name.length <= 21 %>
+              <%= link_to recipe.name, recipe_path(recipe) %>
+            <% else %>
+              <%= link_to recipe.name[0..21], recipe_path(recipe) %>
+            <% end %>
+
           </div>
         </div>
       <% end %>
