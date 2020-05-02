@@ -38,11 +38,25 @@ puts "Creating Recipes"
 recipes = []
 r_names = ["Apple Cake", "Cheese Cake", "Spinach Pasta", "Lasagne"]
 r_cat = ["savory", "sweet"]
+# r_img = cl_image_path("9hBAV7M5fcpZB8eNNv3GRnwp.png")
+r_img = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
 
-recipes << Recipe.create!(name: r_names[0], category: r_cat[1])
-recipes << Recipe.create!(name: r_names[1], category: r_cat[1])
-recipes << Recipe.create!(name: r_names[2], category: r_cat[0])
-recipes << Recipe.create!(name: r_names[3], category: r_cat[0])
+
+recipe_one = Recipe.create!(name: r_names[0], category: r_cat[1])
+recipe_two = Recipe.create!(name: r_names[1], category: r_cat[1])
+recipe_thr = Recipe.create!(name: r_names[2], category: r_cat[0])
+recipe_fou = Recipe.create!(name: r_names[3], category: r_cat[0])
+
+recipe_one.photo = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
+recipe_two.photo = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
+recipe_thr.photo = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
+recipe_fou.photo = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
+
+
+recipes << recipe_one
+recipes << recipe_two
+recipes << recipe_thr
+recipes << recipe_fou
 
 puts "Created 4 Recipes"
 

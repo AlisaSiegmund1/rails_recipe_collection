@@ -4,7 +4,4 @@ class Recipe < ApplicationRecord
   validates :photo, presence: true
   validates :name, presence: true
   validates :category, presence: true
-
-
-
 end
