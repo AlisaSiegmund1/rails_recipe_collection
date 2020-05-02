@@ -47,10 +47,12 @@ recipe_two = Recipe.create!(name: r_names[1], category: r_cat[1])
 recipe_thr = Recipe.create!(name: r_names[2], category: r_cat[0])
 recipe_fou = Recipe.create!(name: r_names[3], category: r_cat[0])
 
-recipe_one.photo = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
-recipe_two.photo = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
-recipe_thr.photo = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
-recipe_fou.photo = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
+# puts "photo #{recipe_fou.photo.attached?}"
+
+# recipe_one.photo.attach("https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png")
+# recipe_two.photo.attach("https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png")
+# recipe_thr.photo.attach("https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png")
+# recipe_fou.photo.attach("https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png")
 
 
 recipes << recipe_one
@@ -58,7 +60,7 @@ recipes << recipe_two
 recipes << recipe_thr
 recipes << recipe_fou
 
-puts "Created 4 Recipes"
+puts "Created 4 Recipes #{recipes}"
 
 # puts "Creating Recipe-Ingredients"
 

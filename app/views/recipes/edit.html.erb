@@ -5,6 +5,7 @@
         <%= simple_form_for (@recipe) do |f| %>
           <%= f.input :name %>
           <%= f.input :description %>
+          <%= f.input :photo, as: :file %>
           <%= f.input :category, collection: ['Herzhaft', 'Süß']%>
           <div class="d-flex">
             <%= f.submit "Änderungen speichern", class: "btn-shadow" %>
