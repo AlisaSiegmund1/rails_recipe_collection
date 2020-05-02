@@ -18,6 +18,7 @@ gem 'webpacker'
 gem 'cloudinary', '~> 1.12.0'
 gem 'activestorage-cloudinary-service'
 gem 'dotenv-rails', groups: [:development, :test]
+gem "actionview", ">= 5.2.4.2"
 
 
 group :development do
@@ -32,3 +33,4 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
