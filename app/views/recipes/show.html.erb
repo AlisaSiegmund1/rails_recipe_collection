@@ -2,7 +2,11 @@
 
   <div class="content-container">
     <div class="recipe-show-banner">
-      <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @recipe.photo.key%>)'>
+      <% if @recipe.photo.attached? %>
+        <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @recipe.photo.key%>)'>
+      <% else %>
+        <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)))'>
+      <% end %>
       <div class="d-flex flex-column align-items-center">
         <%= @recipe.name %>
           <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
@@ -13,9 +17,6 @@
       </div>
     </div>
 
-
-
-    <div class="recipe-container d-flex justify-content-between">
 
       <div class="tags d-flex justify-content-between">
         <div class="flex-grow-1">
@@ -29,6 +30,8 @@
           <i class="fas fa-trash"></i>
         <% end %>
       </div>
+
+    <div class="recipe-container d-flex justify-content-between">
 
       <div class=" container-fluid content d-flex flex-wrap">
         <div class="recipe-ingredients mb-3">

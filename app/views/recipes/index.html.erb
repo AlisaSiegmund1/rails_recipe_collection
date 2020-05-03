@@ -19,7 +19,9 @@
        <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
         <div class="recipe-card">
           <div class="recipe-card-img-top">
+            <% if recipe.photo.attached? %>
             <%= cl_image_tag recipe.photo.key, width: 200, height: 250, crop: :fill %>
+            <% end %>
           </div>
           <div class="recipe-card-body">
             <% if recipe.name.length <= 21 %>
