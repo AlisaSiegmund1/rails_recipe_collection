@@ -1,0 +1,31 @@
+<!-- <div class="base-container"> -->
+  <div class="d-flex justify-content-end">
+    <div class="btn-shadow" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Filtern
+    </div>
+    <%= link_to "+", new_recipe_path, class: "btn-shadow" %>
+  </div>
+
+  <div class="collapse" id="collapseExample">
+    <div class="card card-body">
+      <div class="text-right mr-3">
+        <div class="d-flex">
+          <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
+            <%= link_to "Süß", filterSweet_path %>
+          </div>
+          <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
+            <%= link_to "Herzhaft", filterSavory_path %>
+          </div>
+          <div class="container text-center filter-form">
+            <div class="filter">
+              <form action="/recipes" method="get">
+                <input id="field" type="text" name="category_type" placeholder="Suche nach Zutaten...">
+                <input type="submit", label="Suchen">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->

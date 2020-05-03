@@ -43,6 +43,13 @@ class RecipesController < ApplicationController
     redirect_to root_path
   end
 
+  def sweet
+    @recipes = Recipe.where(category: "Süß")
+  end
+
+  def savory
+    @recipes = Recipe.where(category: "Herzhaft")
+  end
 
   private
 

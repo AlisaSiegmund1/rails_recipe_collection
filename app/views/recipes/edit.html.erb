@@ -11,7 +11,7 @@
             <%= f.input :quantity, collection: ['Portionen', 'Stück'], label:false, selected: 1%>
             <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:false, selected: 2%>
           </div>
-          <div class="d-flex">
+          <div class="d-flex align-items-center">
             <%= f.submit "Änderungen speichern", class: "btn-shadow" %>
             <%= link_to "Zurück", recipe_path(@recipe), class: "btn-shadow ml-3" %>
             <%= link_to recipe_path(@recipe),

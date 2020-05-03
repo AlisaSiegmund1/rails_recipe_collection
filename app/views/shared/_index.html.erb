@@ -1,0 +1,24 @@
+    <div class="recipe-container">
+      <% @recipes.each do |recipe| %>
+
+       <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
+        <div class="recipe-card">
+          <div class="recipe-card-img-top">
+            <% if recipe.photo.attached? %>
+              <%= cl_image_tag recipe.photo.key, width: 200, height: 250, crop: :fill %>
+            <% else %>
+              <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588505411/Rectangle_ttmqdc.png") %>
+            <% end %>
+          </div>
+          <div class="recipe-card-body">
+            <% if recipe.name.length <= 21 %>
+              <%= link_to recipe.name, recipe_path(recipe) %>
+            <% else %>
+              <%= link_to recipe.name[0..21], recipe_path(recipe) %>
+            <% end %>
+          <% end %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>

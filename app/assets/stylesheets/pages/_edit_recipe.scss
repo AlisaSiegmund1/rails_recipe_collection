@@ -31,3 +31,8 @@ input.btn-shadow-small {
 .all-ingredients {
   height: 350px;
 }
+
+.fa-trash:before {
+    content: "\f1f8";
+    font-size: 20px;
+}
