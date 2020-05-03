@@ -4,7 +4,6 @@
       <div class="recipe-edit">
         <%= simple_form_for (@recipe) do |f| %>
           <%= f.input :name %>
-          <%= f.input :description %>
           <%= f.input :photo, as: :file %>
           <div class="d-flex">
             <%= f.input :serving, placeholder: 'z.B. 2', label:false%>

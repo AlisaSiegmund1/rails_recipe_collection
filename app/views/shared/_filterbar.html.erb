@@ -15,15 +15,14 @@
 
 
   <div class="collapse" id="collapseExample">
-    <div class="card card-body">
-        <div class="d-flex">
-          <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
+    <div class="card card-body d-flex justify-content-center align-items-center flex-row">
+          <div class="btn-category" style="font-size: 15px">
             <%= link_to "Süß", filterSweet_path %>
           </div>
-          <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
+          <div class="btn-category" style="font-size: 15px">
             <%= link_to "Herzhaft", filterSavory_path %>
           </div>
-          <div class="container text-center filter-form">
+          <div class="filter-form">
             <div class="filter">
               <form action="/recipes" method="get">
                 <input id="field" type="text" name="category_type" placeholder="Suche nach Zutaten...">
@@ -31,7 +30,6 @@
               </form>
             </div>
           </div>
-        </div>
     </div>
   </div>
-<!-- </div> -->
+  <!-- </div> -->
