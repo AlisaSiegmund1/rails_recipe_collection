@@ -24,7 +24,6 @@
   transition: background 0.5s ease;
   font-weight:bold;
   color: black;
-
 }
 .btn-shadow-small:hover {
   background-color: black;
@@ -40,3 +39,24 @@
   border: 0.1px solid white;
   padding: 1px 7px;
 }
+
+
+.btn-small {
+  border: 0.1px solid black;
+  background-color: black;
+  transition: background 0.5s ease;
+  font-weight:bold;
+  color: white;
+  margin-right: 10px;
+}
+
+
+.btn-small:hover {
+  border: 0.1px solid black;
+  background-color: white;
+  transition: background 0.5s ease;
+  font-weight:bold;
+  color: black;
+  margin-right: 10px;
+}
+

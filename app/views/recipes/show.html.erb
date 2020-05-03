@@ -36,9 +36,18 @@
       <div class=" container-fluid content d-flex flex-wrap">
         <div class="recipe-ingredients mb-3">
           <% if @recipe.ingredients.empty? == false %>
-          <div class="d-flex">
-            <h3>Zutaten für</h3>
-             <input type="text" class="servings" placeholder= 12 >
+          <h3>Zutaten </h3>
+          <div class="d-flex mb-3">
+            <p>
+              für <span class="servings"> <%= @recipe.serving %></span>
+             <%= @recipe.quantity %>
+            </p>
+            <div class="btn-small" id="plus">
+              <p>+</p>
+            </div>
+            <div class="btn-small" id="minus">
+              <p>-</p>
+            </div>
           </div>
             <% @recipe.ingredients.each do |ingredient| %>
               <ul>
