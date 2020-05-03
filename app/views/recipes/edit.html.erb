@@ -4,12 +4,12 @@
       <div class="recipe-edit">
         <%= simple_form_for (@recipe) do |f| %>
           <%= f.input :name %>
-          <%= f.input :photo, as: :file %>
           <div class="d-flex">
             <%= f.input :serving, placeholder: 'z.B. 2', label:false%>
             <%= f.input :quantity, collection: ['Portionen', 'Stück'], label:false, selected: 1%>
             <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:false, selected: 2%>
           </div>
+          <%= render "shared/add_step" %>
           <div class="d-flex align-items-center">
             <%= f.submit "Änderungen speichern", class: "btn-shadow" %>
             <%= link_to "Zurück", recipe_path(@recipe), class: "btn-shadow ml-3" %>

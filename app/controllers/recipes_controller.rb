@@ -29,6 +29,7 @@ class RecipesController < ApplicationController
   def edit
     set_recipe
     @ingredient = Ingredient.new
+    @step = Step.new
   end
 
   def update
@@ -58,7 +59,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :category, :photo, :quantity, :serving)
+    params.require(:recipe).permit(:name, :category, :photo, :quantity, :serving)
   end
 
 end

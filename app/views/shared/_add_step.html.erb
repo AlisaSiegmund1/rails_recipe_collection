@@ -1,0 +1,17 @@
+<% if @recipe.steps.empty? %>
+  <i class="fas fa-plus-circle icon-add-step"></i><a data-toggle="collapse" href="#collapseStepAdd" role="button" aria-expanded="false" aria-controls="collapseStepAdd" class="add-step-link">
+    Add your first step
+  </a>
+<% else %>
+  <i class="fas fa-plus-circle icon-add-step"></i><a data-toggle="collapse" href="#collapseStepAdd" role="button" aria-expanded="false" aria-controls="collapseStepAdd" class="add-step-link">
+    Add new step
+  </a>
+<% end %>
+
+<div class="collapse" id="collapseStepAdd">
+  <div class="card card-body step-form" style="border: 0">
+
+    <%= render 'shared/steps', recipe: @recipe, step: @step %>
+
+  </div>
+</div>
