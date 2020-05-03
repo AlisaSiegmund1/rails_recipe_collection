@@ -11,6 +11,7 @@ class RecipesController < ApplicationController
   def show
     set_recipe
 
+
   end
 
   def new
