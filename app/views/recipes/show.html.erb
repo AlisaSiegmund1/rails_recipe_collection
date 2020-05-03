@@ -35,14 +35,18 @@
 
       <div class=" container-fluid content d-flex flex-wrap">
         <div class="recipe-ingredients mb-3">
-          <h3>Zutaten:</h3>
           <% if @recipe.ingredients.empty? == false %>
+          <div class="d-flex">
+            <h3>Zutaten für</h3>
+             <input type="text" class="servings" placeholder= 12 >
+          </div>
             <% @recipe.ingredients.each do |ingredient| %>
               <ul>
                 <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
               </ul>
             <% end %>
           <% else %>
+            <h3>Zutaten</h3>
             <span> Bitte füge Zutaten zu dem Rezept hinzu.</span>
           <% end %>
 

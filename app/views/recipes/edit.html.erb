@@ -6,7 +6,11 @@
           <%= f.input :name %>
           <%= f.input :description %>
           <%= f.input :photo, as: :file %>
-          <%= f.input :category, collection: ['Herzhaft', 'Süß']%>
+          <div class="d-flex">
+            <%= f.input :serving, placeholder: 'z.B. 2', label:false%>
+            <%= f.input :quantity, collection: ['Portionen', 'Stück'], label:false, selected: 1%>
+            <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:false, selected: 2%>
+          </div>
           <div class="d-flex">
             <%= f.submit "Änderungen speichern", class: "btn-shadow" %>
             <%= link_to "Zurück", recipe_path(@recipe), class: "btn-shadow ml-3" %>
@@ -20,7 +24,7 @@
       </div>
 
       <div class="form-ingredient d-flex flex-column" style="text-align: left">
-          <h3>Zutaten:</h3>
+        <h3>Zutaten:</h3>
         <div class="all-ingredients d-flex flex-column  flex-wrap">
           <% if @recipe.ingredients.empty? == false %>
             <% @recipe.ingredients.each do |ingredient| %>
