@@ -10,7 +10,7 @@
             <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:false, selected: 2%>
           </div>
             <%= f.input :photo, as: :file, label: false %>
-          <% if @recipe.step_ids.empty? %>
+          <% if @steps.nil? %>
             <%= render "shared/add_step" %>
           <% else %>
             <% @steps.each do |step| %>
