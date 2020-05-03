@@ -9,6 +9,7 @@
             <%= f.input :quantity, collection: ['Portionen', 'Stück'], label:false, selected: 1%>
             <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:false, selected: 2%>
           </div>
+            <%= f.input :photo, as: :file, label: false %>
           <% if @recipe.step_ids.empty? %>
             <%= render "shared/add_step" %>
           <% else %>
