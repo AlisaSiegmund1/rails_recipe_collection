@@ -64,8 +64,8 @@
         </div>
         <div class="description">
         <h3>Zubereitung:</h3>
-        <% if @recipe.steps.nil? == false %>
-          <%= @recipe.steps %>
+        <% if @recipe.step_ids.empty? == false %>
+          <%= @recipe.step_ids %>
         <% else %>
           <span> Da fehlt doch was - bitte füge eine Beschreibung der Zubereitung hinzu. </span>
         <% end %>

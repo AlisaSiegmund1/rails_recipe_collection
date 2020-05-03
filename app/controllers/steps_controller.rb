@@ -1,4 +1,4 @@
-class IngredientsController < ApplicationController
+class StepsController < ApplicationController
   def new
     raise
     @step = Recipe.find(params[:recipe_id])
@@ -12,7 +12,7 @@ class IngredientsController < ApplicationController
 
     # @step.recipe = recipe
    if @step.save
-      redirect_to edit_recipe_path(recipe)
+      redirect_to edit_recipe_path(@recipe)
     else
       render :new
     end

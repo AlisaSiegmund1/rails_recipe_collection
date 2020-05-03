@@ -10,8 +10,4 @@ Rails.application.routes.draw do
     resources :steps, only:[:new, :create, :destroy, :edit]
   end
 
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-  # get 'categoryFilter', to: 'pages#filter'
 end
