@@ -42,7 +42,9 @@
           </div>
             <% @recipe.ingredients.each do |ingredient| %>
               <ul>
-                <li><%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
+                <li>
+                  <span class="amount-ingredient"><%= ingredient.dose %></span><%= ingredient.unit %> - <%= ingredient.description %>  </li>
+                </li>
               </ul>
             <% end %>
           <% else %>
