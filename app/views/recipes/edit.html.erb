@@ -24,7 +24,9 @@
 
 
           <h3>Zubereitung</h3>
+          <% count = 0 %>
           <% @recipe.step_ids.each do |step| %>
+            <% count += 1 %>
              <div classs="step-card"id="step-<%= step %>">
                 <div class="d-flex">
                   <div class="step-icon" style="position: relative;">
@@ -32,7 +34,8 @@
                       <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
                     </div>
                     <div class="step-id">
-                      <%= step %>
+                      <%=count%>
+
                     </div>
 
                   </div>
