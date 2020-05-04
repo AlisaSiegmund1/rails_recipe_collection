@@ -27,7 +27,7 @@
           <% count = 0 %>
           <% @recipe.step_ids.each do |step| %>
             <% count += 1 %>
-             <div classs="step-card"id="step-<%= step %>">
+             <div class="step-card"id="step-<%= step %>">
                 <div class="d-flex">
                   <div class="step-icon" style="position: relative;">
                     <div class="icon">
@@ -35,20 +35,18 @@
                     </div>
                     <div class="step-id">
                       <%=count%>
-
                     </div>
-
                   </div>
                   <%= Step.find(step).content %>
                   <%= render 'shared/edit_step', trip: @trip, step: step %>
                   <%= render 'shared/delete_step', trip: @trip, step: step %>
                 </div>
+            </div>
               <% end %>
 
               <div>
                 <%= render 'shared/add_step'%>
               </div>
-            </div>
 
       <div class="form-ingredient d-flex flex-column" style="text-align: left">
         <h3>Zutaten:</h3>

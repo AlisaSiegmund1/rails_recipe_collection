@@ -8,17 +8,21 @@ a.add-step-link:hover {
   color: white;
 }
 
-.step-card{
-  width: 670px;
+.step-card {
+  width: 650px;
+  margin: 40px 0;
 
 }
-
 
 .step-id {
   position: absolute;
   color: white;
   font-weight: bolder;
   z-index: 47;
-  bottom: 0px;
+  top: 10px;
   left: 21px;
+}
+
+.step-icon {
+  margin-right: 10px;
 }
