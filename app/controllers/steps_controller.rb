@@ -20,9 +20,9 @@ class StepsController < ApplicationController
   end
 
   def edit
-      @recipe = Recipe.find(params["recipe_id"])
-      @step = Step.find(params[:id])
-    end
+    @recipe = Recipe.find(params["recipe_id"])
+    @step = Step.find(params[:id])
+  end
 
 
   def update
