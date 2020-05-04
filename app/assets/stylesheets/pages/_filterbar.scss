@@ -13,3 +13,20 @@
     text-decoration: none;
   }
 }
+
+input.search {
+    background-color: white;
+    box-shadow: none;
+    border: none;
+    position: absolute;
+    right: 445px;
+    top: 22px;
+}
+
+
+input[type="submit"] {
+    font-family: "Font Awesome 5 Free"; // for the open access version
+    font-size: 0.9em;
+    font-weight: 900;
+    background-color: none;
+}
