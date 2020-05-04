@@ -1,7 +1,7 @@
 class StepsController < ApplicationController
   def new
-    @step = Recipe.find(params[:recipe_id])
-    @recipe = Recipe.new
+    @step = Step.new
+    @recipe = Recipe.find(params[:recipe_id])
   end
 
   def create
@@ -47,5 +47,4 @@ class StepsController < ApplicationController
   def step_params
     params.require(:step).permit(:content)
   end
-
 end

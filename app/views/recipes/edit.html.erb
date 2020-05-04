@@ -21,38 +21,7 @@
           </div>
         <% end %>
 
-        <h3>Zubereitung</h3>
-        <% count = 0 %>
-        <% @recipe.step_ids.each do |step| %>
-          <% count += 1 %>
-            <div class="step-card"id="step-<%= step %>">
-              <div class="d-flex">
-                <div class="step-icon" style="position: relative;">
-                  <div class="icon">
-                    <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
-                  </div>
-                  <div class="step-id">
-                    <%=count%>
-                  </div>
-                </div>
-                <div class="step-content">
-                  <%= Step.find(step).content %>
-                </div>
-                <%= render 'shared/edit_step', recipe: @recipe, step: step %>
-                <%= render 'shared/delete_step', recipe: @recipe, step: step %>
-              </div>
-            </div>
-            <div class="collapse" id="collapseEditStep<%= step %>">
-              <div class="card card-body" style="margin-left: 25px; border: 0">
-                <%= render 'shared/steps', recipe: @recipe, step: step %>
-              </div>
-            </div>
-          <% end %>
 
-        <div>
-          <%= render 'shared/add_step'%>
-        </div>
-        </div>
 
       <div class="form-ingredient d-flex flex-column" style="text-align: left">
         <h3>Zutaten:</h3>
