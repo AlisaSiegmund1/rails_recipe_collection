@@ -11,20 +11,41 @@
           </div>
             <%= f.input :photo, as: :file, label: false %>
 
+          <div class="d-flex align-items-center">
+            <%= f.submit "Änderungen speichern", class: "btn-shadow" %>
+            <%= link_to "Zurück", recipe_path(@recipe), class: "btn-shadow ml-3" %>
+            <%= link_to recipe_path(@recipe),
+                  method: :delete,
+                  data: { confirm: "Bist du dir sicher?" } do %>
+                  <i class="fas fa-trash" style="font-size: 10px"></i>
+                <% end %>
+          </div>
+          <% end %>
+
 
           <h3>Zubereitung</h3>
           <% @recipe.step_ids.each do |step| %>
-          <div class="step">
-            <%= Step.find(step).content %>
-          </div>
-          <% end %>
-          <% if @recipe.step_ids.empty? == false %>
-          <%= render "shared/add_step" %>
-          <% else %>
-          <%= render "shared/add_step" %>
-        <% end %>
+             <div classs="step-card"id="step-<%= step %>">
+                <div class="d-flex">
+                  <div class="step-icon">
+                    <div class="icon" style="position: relative;">
+                      <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
+                    </div>
+                    <div class="step-id">
+                      <%= step %>
+                    </div>
 
-      </div>
+                  </div>
+                  <%= Step.find(step).content %>
+                  <%= render 'shared/edit_step', trip: @trip, step: step %>
+                  <%= render 'shared/delete_step', trip: @trip, step: step %>
+                </div>
+              <% end %>
+
+              <div>
+                <%= render 'shared/add_step'%>
+              </div>
+            </div>
 
       <div class="form-ingredient d-flex flex-column" style="text-align: left">
         <h3>Zutaten:</h3>
@@ -62,17 +83,6 @@
       </div>
 
     </div>
-
-          <div class="d-flex align-items-center">
-            <%= f.submit "Änderungen speichern", class: "btn-shadow" %>
-            <%= link_to "Zurück", recipe_path(@recipe), class: "btn-shadow ml-3" %>
-            <%= link_to recipe_path(@recipe),
-                  method: :delete,
-                  data: { confirm: "Bist du dir sicher?" } do %>
-                  <i class="fas fa-trash" style="font-size: 10px"></i>
-                <% end %>
-          </div>
-          <% end %>
   </div>
   </div>
 
