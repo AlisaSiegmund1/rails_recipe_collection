@@ -19,8 +19,25 @@ class StepsController < ApplicationController
     # redirect_to edit_recipe_path(recipe)
   end
 
+  def edit
+      @recipe = Recipe.find(params["recipe_id"])
+      @step = Step.find(params[:id])
+    end
+
+
+  def update
+    @step = Step.find(params[:id])
+    @recipe = Recipe.find(params["recipe_id"].to_i)
+    @step.update(step_params)
+    #@step = Step.new(step_params)
+    redirect_to edit_recipe_path(@recipe)
+
+  end
+
+
   def destroy
-    @step = Step.find(params[:recipe_id])
+    @step = Step.find(params[:id])
+    @recipe = Recipe.find(params["recipe_id"].to_i)
     @step.destroy
     redirect_to edit_recipe_path(@step.recipe)
   end

@@ -38,8 +38,8 @@
                     </div>
                   </div>
                   <%= Step.find(step).content %>
-                  <%= render 'shared/edit_step', trip: @trip, step: step %>
-                  <%= render 'shared/delete_step', trip: @trip, step: step %>
+                  <%= render 'shared/edit_step', recipe: @recipe, step: step %>
+                  <%= render 'shared/delete_step', recipe: @recipe, step: step %>
                 </div>
             </div>
               <% end %>
