@@ -15,8 +15,10 @@ a.add-step-link:hover {
 
 
 .step-id {
-    /* position: absolute; */
-    color: red;
-    font-weight: bolder;
-    z-index: 47;
+  position: absolute;
+  color: white;
+  font-weight: bolder;
+  z-index: 47;
+  bottom: 0px;
+  left: 21px;
 }

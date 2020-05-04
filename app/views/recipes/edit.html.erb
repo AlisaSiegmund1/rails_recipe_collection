@@ -27,8 +27,8 @@
           <% @recipe.step_ids.each do |step| %>
              <div classs="step-card"id="step-<%= step %>">
                 <div class="d-flex">
-                  <div class="step-icon">
-                    <div class="icon" style="position: relative;">
+                  <div class="step-icon" style="position: relative;">
+                    <div class="icon">
                       <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
                     </div>
                     <div class="step-id">
