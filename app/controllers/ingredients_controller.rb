@@ -1,7 +1,7 @@
 class IngredientsController < ApplicationController
   def new
-    @ingredient = Recipe.find(params[:recipe_id])
-    @recipe = Recipe.new
+    @ingredient = Ingredient.new
+    @recipe = Recipe.find(params[:recipe_id])
   end
 
   def create
