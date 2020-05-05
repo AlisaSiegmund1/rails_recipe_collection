@@ -1,6 +1,6 @@
 <div class="base-container">
-  <div class="content-container">
-    <div class="recipe-container container-fluid content justify-content-between">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-6" style="background-color: white">
       <div class="recipe-edit">
         <%= simple_form_for (@recipe) do |f| %>
           <%= f.input :name %>
@@ -10,13 +10,16 @@
             <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:false, selected: 2%>
           </div>
             <%= f.input :photo, as: :file, label: false %>
-        <div class="d-flex align-items-center">
-          <%= link_to "Zurück", recipe_path(@recipe), class: "btn-shadow ml-3" %>
-          <%= f.submit "Weiter", class: "btn-shadow" %>
-          </div>
-        <% end %>
+      </div>
     </div>
   </div>
+  <div class="row justify-content-md-center">
+    <div class="col-lg-6 d-flex justify-content-between" style="background-color: white">
+          <%= link_to "Zurück", recipe_path(@recipe), class: "btn-shadow ml-3" %>
+          <%= f.submit "Weiter", class: "btn-shadow ml-3" %>
+        <% end %>
+      </div>
+    </div>
 </div>
 
 

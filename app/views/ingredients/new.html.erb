@@ -1,15 +1,17 @@
-<div class="form-ingredient d-flex flex-column" style="text-align: left">
+<div class="base-container">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-6" style="background-color: white">
+      <div class="ingredient-container">
         <h3>Zutaten:</h3>
-        <div class="all-ingredients d-flex flex-column  flex-wrap">
           <% if @recipe.ingredients.empty? == false %>
             <% @recipe.ingredients.each do |ingredient| %>
               <ul style="list-style-type:none; padding-left: 0;">
-                 <li>
-                    <%= link_to new_recipe_ingredient_path(@recipe),
+                <li>
+                  <%= link_to new_recipe_ingredient_path(@recipe),
                         method: :delete,
                         data: { confirm: "Bist du dir sicher?" } do %>
-                    <i class="fas fa-trash" style="font-size: 10px"></i>
-                  <% end %>
+                        <i class="fas fa-trash" style="font-size: 10px"></i>
+                      <% end %>
                   <%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>
                 </li>
               </ul>
@@ -17,18 +19,25 @@
           <% else %>
             <p> Bitte füge Zutaten zu dem Rezept hinzu.</p>
           <% end %>
-        </div>
 
-        <div style="width: 500px">
-          <h3>Neue Zutat hinzufügen:</h3>
-          <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
-            <div class="d-flex">
-                <%= f.input :dose, placeholder: 'z.B. 100', label:false%>
-                <%= f.input :unit , placeholder: 'gr', label:false%>
-                <%= f.input :description, placeholder: 'Zucker', label:false %>
-                <%= f.submit "+", class: "btn-shadow-small" %>
-            </div>
-          <% end %>
-        </div>
-        <%= link_to "Weiter", new_recipe_step_path(@recipe), class: "btn-shadow ml-3" %>
+          <div style="width: 500px">
+            <h3>Neue Zutat hinzufügen:</h3>
+            <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
+              <div class="d-flex">
+                  <%= f.input :dose, placeholder: 'z.B. 100', label:false%>
+                  <%= f.input :unit , placeholder: 'gr', label:false%>
+                  <%= f.input :description, placeholder: 'Zucker', label:false %>
+                  <%= f.submit "+", class: "btn-shadow-small" %>
+              </div>
+            <% end %>
+          </div>
       </div>
+  </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-lg-6 d-flex justify-content-between" style="background-color: white">
+      <%= link_to "Zurück", edit_recipe_path(@recipe), class: "btn-shadow ml-3" %>
+      <%= link_to "Weiter", new_recipe_step_path(@recipe), class: "btn-shadow ml-3" %>
+    </div>
+    </div>
+</div>
