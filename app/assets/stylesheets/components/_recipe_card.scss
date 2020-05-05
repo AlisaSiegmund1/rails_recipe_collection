@@ -1,18 +1,80 @@
-.recipe-card {
-  margin: 20px;
+/* Extra extra small devices (phones, 360px and down) */
+@media only screen and (max-width: 350px) {
 }
 
-.recipe-card-img-top {
-  height: 250px;
-  width: 200px;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 350px) {
+  .recipe-card {
+    margin-right: 50px;
+    margin-left: 20px;
+    margin-top: 30px;
   }
 
-.recipe-card-body {
-  background-color: black;
-  text-align: center;
-  padding: 5px 0;
-  a {
-    color: white;
-    text-decoration: none;
+  .recipe-card-img-top {
+    height: 150px;
+    width: 100px;
   }
+
+  img#index-recipe {
+    height: 180px;
+    width: 150px;
+    object-fit: cover;
+  }
+
+  .recipe-card-body {
+    background-color: black;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    width: 150px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .recipe-card {
+    margin: 20px;
+  }
+
+  .recipe-card-img-top {
+    height: 250px;
+    width: 200px;
+  }
+
+  img#index-recipe{
+    height: 250px;
+    width: 200px;
+    object-fit: cover;
+  }
+
+  .recipe-card-body {
+    background-color: black;
+    text-align: center;
+    padding: 5px 0;
+    width: 200px;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
