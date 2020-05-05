@@ -58,35 +58,35 @@
           <span> Bitte füge Zutaten zu dem Rezept hinzu.</span>
           <% end %>
 
-        <div class="description">
-          <h3>Zubereitung:</h3>
-          <% if @recipe.step_ids.empty? == false %>
-          <% count = 0 %>
-          <% @recipe.step_ids.each do |step| %>
-          <% count += 1 %>
-          <div class="step-card"id="step-<%= step %>">
-            <div class="d-flex">
-              <div class="step-icon" style="position: relative;">
-                <div class="icon">
-                  <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
+          <div class="description">
+            <h3>Zubereitung:</h3>
+            <% if @recipe.step_ids.empty? == false %>
+            <% count = 0 %>
+            <% @recipe.step_ids.each do |step| %>
+            <% count += 1 %>
+            <div class="step-card"id="step-<%= step %>">
+              <div class="d-flex">
+                <div class="step-icon" style="position: relative;">
+                  <div class="icon">
+                    <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
+                  </div>
+                  <div class="step-id">
+                    <%=count%>
+                  </div>
                 </div>
-                <div class="step-id">
-                  <%=count%>
+                <div class="step-content">
+                  <%= Step.find(step).content %>
                 </div>
               </div>
-              <div class="step-content">
-                <%= Step.find(step).content %>
-              </div>
+              <% end %>
             </div>
+            <% else %>
+            <span> Da fehlt doch was - bitte füge eine Beschreibung der Zubereitung hinzu. </span>
             <% end %>
           </div>
-          <% else %>
-          <span> Da fehlt doch was - bitte füge eine Beschreibung der Zubereitung hinzu. </span>
-          <% end %>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 

@@ -1,8 +1,8 @@
 <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
-              <div class="d-flex">
-                  <%= f.input :dose, placeholder: 'z.B. 100', label:false%>
-                  <%= f.input :unit , placeholder: 'gr', label:false%>
-                  <%= f.input :description, placeholder: 'Zucker', label:false %>
-                  <%= f.submit "+", class: "btn-shadow-small" %>
-              </div>
-            <% end %>
+<div class="d-flex">
+  <%= f.input :dose, placeholder: 'z.B. 100', label:false%>
+  <%= f.input :unit , placeholder: 'gr', label:false%>
+  <%= f.input :description, placeholder: 'Zucker', label:false %>
+  <%= f.submit "+", class: "btn-shadow-small" %>
+</div>
+<% end %>
