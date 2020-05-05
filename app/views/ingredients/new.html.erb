@@ -7,12 +7,14 @@
             <% @recipe.ingredients.each do |ingredient| %>
               <ul style="list-style-type:none; padding-left: 0;">
                 <li>
-                  <%= link_to new_recipe_ingredient_path(@recipe),
+                  <%#= link_to new_recipe_ingredient_path(@recipe),
                         method: :delete,
                         data: { confirm: "Bist du dir sicher?" } do %>
-                        <i class="fas fa-trash" style="font-size: 10px"></i>
-                      <% end %>
+                        <!-- <i class="fas fa-trash" style="font-size: 10px"></i> -->
+                      <%# end %>
                   <%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>
+                  <%= render 'shared/delete_ingredient', recipe: @recipe, ingredient: ingredient %>
+
                 </li>
               </ul>
             <% end %>

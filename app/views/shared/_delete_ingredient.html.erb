@@ -1,5 +1,3 @@
-<%= link_to.html_safe, recipe_ingredient_path(@recipe, ingredient),
-          method: :delete,
-          data: { confirm: "Bist du dir sicher?" } do %>
-          <i class="fas fa-trash" style="font-size: 10px"></i>
-      <% end %>
+<%= link_to ('<p style="margin-bottom: 0;padding-left: 15px; color: #ABAAAA; text-decoration: none; padding-bottom: 8px; ">Delete</p>').html_safe, recipe_ingredient_path(@recipe, ingredient),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
