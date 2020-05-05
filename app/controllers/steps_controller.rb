@@ -39,7 +39,7 @@ class StepsController < ApplicationController
     @step = Step.find(params[:id])
     @recipe = Recipe.find(params["recipe_id"].to_i)
     @step.destroy
-    redirect_to edit_recipe_path(@step.recipe)
+    redirect_to new_recipe_step_path(@recipe)
   end
 
   private

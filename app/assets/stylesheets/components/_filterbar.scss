@@ -30,3 +30,18 @@ input[type="submit"] {
     font-weight: 900;
     background-color: none;
 }
+
+.filter-form #field {
+  width: 250px;
+}
+
+.card.card-body {
+  border: 0.5px solid black;
+  border-radius: 0;
+}
+
+
+.card.card-body.d-flex.justify-content-center.align-items-center.flex-row {
+    margin-left: 20px;
+    margin-right: 13px;
+}
