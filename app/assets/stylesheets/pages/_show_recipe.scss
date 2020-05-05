@@ -3,7 +3,6 @@
 
 // }
 
-
 .tags {
   // background-color: yellow;
   height: 40px;
@@ -19,10 +18,13 @@
   margin-left: 0;
 }
 
-.description {
+p.description {
   // background-color: white;
-  width: 660px;
-  height: 460px;
+  margin: 0 0 0 5em;
+  white-space: nowrap;
+  width: 16em;
+  text-overflow: ellipsis
+
 }
 
 
@@ -41,12 +43,12 @@ i {
 }
 
 p {
-    margin-top: 0;
-    padding: 9px 24px;
-    margin: -7px -13px;
+  margin-top: 0;
+  padding: 9px 24px;
+  margin: -7px -13px;
 }
 
 input.servings {
-    width: 34px;
-    margin-left: 10px;
+  width: 34px;
+  margin-left: 10px;
 }

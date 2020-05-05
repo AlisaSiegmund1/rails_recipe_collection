@@ -3,44 +3,41 @@
   <div class="content-container">
     <div class="recipe-show-banner">
       <% if @recipe.photo.attached? %>
-        <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @recipe.photo.key%>)'>
-      <% else %>
+      <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @recipe.photo.key%>)'>
+        <% else %>
         <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)))'>
-      <% end %>
-      <div class="d-flex flex-column align-items-center">
-        <%= @recipe.name %>
-          <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
-            <%= @recipe.category %>
+          <% end %>
+          <div class="d-flex flex-column align-items-center">
+            <%= @recipe.name %>
+            <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
+              <%= @recipe.category %>
+            </div>
           </div>
-
+        </div>
       </div>
-      </div>
-    </div>
 
 
       <div class="tags d-flex justify-content-between">
         <div class="flex-grow-1">
         </div>
         <%= link_to edit_recipe_path(@recipe) do %>
-         <i class="fas fa-pen"> Rezept bearbeiten</i>
+        <i class="fas fa-pen"> Rezept bearbeiten</i>
         <% end %>
         <%= link_to recipe_path(@recipe),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } do %>
-          <i class="fas fa-trash"></i>
+        method: :delete,
+        data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash"></i>
         <% end %>
       </div>
 
-    <div class="recipe-container d-flex justify-content-between">
-
-      <div class=" container-fluid content d-flex flex-wrap">
+      <div class="recipe-container d-flex justify-content-between">
         <div class="recipe-ingredients mb-3">
           <% if @recipe.ingredients.empty? == false %>
           <h3>Zutaten </h3>
           <div class="d-flex mb-3">
             <p>
               für <span class="servings"> <%= @recipe.serving %></span>
-             <%= @recipe.quantity %>
+              <%= @recipe.quantity %>
             </p>
             <div class="btn-small" id="plus">
               <p>+</p>
@@ -49,48 +46,47 @@
               <p>-</p>
             </div>
           </div>
-            <% @recipe.ingredients.each do |ingredient| %>
-              <ul>
-                <li>
-                  <span class="amount-ingredient" style="font-weight: bolder"><%= ingredient.dose %></span> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
-                </li>
-              </ul>
-            <% end %>
+          <% @recipe.ingredients.each do |ingredient| %>
+          <ul>
+            <li>
+              <span class="amount-ingredient" style="font-weight: bolder"><%= ingredient.dose %></span> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
+            </li>
+          </ul>
+          <% end %>
           <% else %>
-            <h3>Zutaten</h3>
-            <span> Bitte füge Zutaten zu dem Rezept hinzu.</span>
+          <h3>Zutaten</h3>
+          <span> Bitte füge Zutaten zu dem Rezept hinzu.</span>
           <% end %>
 
-        </div>
         <div class="description">
-        <h3>Zubereitung:</h3>
-        <% if @recipe.step_ids.empty? == false %>
+          <h3>Zubereitung:</h3>
+          <% if @recipe.step_ids.empty? == false %>
           <% count = 0 %>
           <% @recipe.step_ids.each do |step| %>
-            <% count += 1 %>
-            <div class="step-card"id="step-<%= step %>">
-              <div class="d-flex">
-                <div class="step-icon" style="position: relative;">
-                  <div class="icon">
-                    <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
-                  </div>
-                  <div class="step-id">
-                    <%=count%>
-                  </div>
+          <% count += 1 %>
+          <div class="step-card"id="step-<%= step %>">
+            <div class="d-flex">
+              <div class="step-icon" style="position: relative;">
+                <div class="icon">
+                  <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
                 </div>
-                <div class="step-content">
-                  <%= Step.find(step).content %>
+                <div class="step-id">
+                  <%=count%>
                 </div>
               </div>
-                <% end %>
+              <div class="step-content">
+                <%= Step.find(step).content %>
+              </div>
             </div>
-        <% else %>
+            <% end %>
+          </div>
+          <% else %>
           <span> Da fehlt doch was - bitte füge eine Beschreibung der Zubereitung hinzu. </span>
-        <% end %>
+          <% end %>
         </div>
       </div>
     </div>
-
   </div>
+</div>
 </div>
 
