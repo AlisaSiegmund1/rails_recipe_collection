@@ -9,13 +9,13 @@ class IngredientsController < ApplicationController
     recipe = Recipe.find(params[:recipe_id])
     ingredient.recipe = recipe
     ingredient.save!
-    redirect_to edit_recipe_path(recipe)
+    redirect_to new_recipe_ingredient_path(recipe)
   end
 
   def destroy
-    @ingredient = Ingredient.find(params[:recipe_id])
+    @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
-    redirect_to edit_recipe_path(@ingredient.recipe)
+    redirect_to new_recipe_ingredient_pathh(@ingredient.recipe)
   end
 
   private

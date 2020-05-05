@@ -1,0 +1,17 @@
+<% if @recipe.ingredients.empty? %>
+  <i class="fas fa-plus-circle icon-add-step"></i><a data-toggle="collapse" href="#collapseStepAdd" role="button" aria-expanded="false" aria-controls="collapseStepAdd" class="add-step-link">
+    Erste Zutat hinzufügen
+  </a>
+<% else %>
+  <i class="fas fa-plus-circle icon-add-step"></i><a data-toggle="collapse" href="#collapseStepAdd" role="button" aria-expanded="false" aria-controls="collapseStepAdd" class="add-step-link">
+    Weiteren Zutaten hinzufügen
+  </a>
+<% end %>
+
+<div class="collapse" id="collapseStepAdd">
+  <div class="card card-body step-form" style="border: 0">
+
+    <%= render 'shared/ingredients', recipe: @recipe, ingredient: @ingredient %>
+
+  </div>
+</div>

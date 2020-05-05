@@ -1,7 +1,7 @@
 <div class="base-container">
   <div class="row justify-content-md-center">
     <div class="col-lg-6" style="background-color: white">
-      <div class="ingredient-container">
+      <div class="ingredient-container mb-3">
         <h3>Zutaten:</h3>
           <% if @recipe.ingredients.empty? == false %>
             <% @recipe.ingredients.each do |ingredient| %>
@@ -19,20 +19,11 @@
           <% else %>
             <p> Bitte füge Zutaten zu dem Rezept hinzu.</p>
           <% end %>
-
-          <div style="width: 500px">
-            <h3>Neue Zutat hinzufügen:</h3>
-            <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
-              <div class="d-flex">
-                  <%= f.input :dose, placeholder: 'z.B. 100', label:false%>
-                  <%= f.input :unit , placeholder: 'gr', label:false%>
-                  <%= f.input :description, placeholder: 'Zucker', label:false %>
-                  <%= f.submit "+", class: "btn-shadow-small" %>
-              </div>
-            <% end %>
+          </div>
+          <div class="collapsable-form">
+            <%= render 'shared/add_ingredient'%>
           </div>
       </div>
-  </div>
   </div>
   <div class="row justify-content-md-center">
     <div class="col-lg-6 d-flex justify-content-between" style="background-color: white">
@@ -41,3 +32,4 @@
     </div>
     </div>
 </div>
+  </div>
