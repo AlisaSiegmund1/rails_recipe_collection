@@ -11,7 +11,7 @@ class StepsController < ApplicationController
     @step.recipe = @recipe
 
     if @step.save
-      redirect_to edit_recipe_path(@recipe)
+      redirect_to new_recipe_step_path(@recipe)
     else
       render :new
     end
@@ -30,7 +30,7 @@ class StepsController < ApplicationController
     @recipe = Recipe.find(params["recipe_id"].to_i)
     @step.update(step_params)
     #@step = Step.new(step_params)
-    redirect_to edit_recipe_path(@recipe)
+    redirect_to new_recipe_step_path(@recipe)
 
   end
 
