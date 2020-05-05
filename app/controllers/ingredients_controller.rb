@@ -14,6 +14,7 @@ class IngredientsController < ApplicationController
 
   def destroy
     @ingredient = Ingredient.find(params[:id])
+    @recipe = Recipe.find(params["recipe_id"].to_i)
     @ingredient.destroy
     redirect_to new_recipe_ingredient_pathh(@ingredient.recipe)
   end
