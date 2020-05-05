@@ -2,36 +2,32 @@
   <div class="row justify-content-md-center">
     <div class="col-lg-6" style="background-color: white">
       <div class="ingredient-container mb-3">
-        <h3>Zutaten:</h3>
-          <% if @recipe.ingredients.empty? == false %>
-            <% @recipe.ingredients.each do |ingredient| %>
-              <ul style="list-style-type:none; padding-left: 0;">
-                <li>
-                  <%#= link_to new_recipe_ingredient_path(@recipe),
-                        method: :delete,
-                        data: { confirm: "Bist du dir sicher?" } do %>
-                        <!-- <i class="fas fa-trash" style="font-size: 10px"></i> -->
-                      <%# end %>
+        <h3>Zutaten</h3>
+        <% if @recipe.ingredients.empty? == false %>
+          <% @recipe.ingredients.each do |ingredient| %>
+            <ul>
+              <li>
+                <div class="d-flex">
                   <%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>
                   <%= render 'shared/delete_ingredient', recipe: @recipe, ingredient: ingredient %>
-
-                </li>
-              </ul>
-            <% end %>
-          <% else %>
-            <p> Bitte füge Zutaten zu dem Rezept hinzu.</p>
+                </div>
+              </li>
+            </ul>
           <% end %>
-          </div>
-          <div class="collapsable-form">
-            <%= render 'shared/add_ingredient'%>
-          </div>
+        <% else %>
+          <p> Bitte füge Zutaten zu dem Rezept hinzu.</p>
+        <% end %>
       </div>
+      <div class="collapsable-form">
+        <%= render 'shared/add_ingredient'%>
+      </div>
+    </div>
   </div>
   <div class="row justify-content-md-center">
-    <div class="col-lg-6d-flex justify-content-between" style="background-color: white">
+    <div class="col-lg-6 d-flex justify-content-between" style="background-color: white">
       <%= link_to "Zurück", edit_recipe_path(@recipe), class: "btn-shadow ml-3" %>
       <%= link_to "Weiter", new_recipe_step_path(@recipe), class: "btn-shadow ml-3" %>
     </div>
-    </div>
-</div>
   </div>
+</div>
+
