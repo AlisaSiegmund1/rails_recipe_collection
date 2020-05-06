@@ -1,6 +1,6 @@
 <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
-<div class="details-one d-flex">
-  <div class="d-flex">
+<div class="ingredients-details-one d-flex">
+  <div class="d-flex justify-content-between">
     <%= f.input :dose, placeholder: 'z.B. 100', label:false%>
     <%= f.input :unit , placeholder: 'gr', label:false%>
   </div>
