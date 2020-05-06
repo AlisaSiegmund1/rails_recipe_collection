@@ -21,11 +21,11 @@
         <div class="flex-grow-1">
         </div>
         <%= link_to edit_recipe_path(@recipe) do %>
-        <i class="fas fa-pen"> Rezept bearbeiten</i>
+        <i class="fas fa-pen"></i>
         <% end %>
         <%= link_to recipe_path(@recipe),
         method: :delete,
-        data: { confirm: "Are you sure?" } do %>
+        data: { confirm: "Bist du sicher?" } do %>
         <i class="fas fa-trash"></i>
         <% end %>
       </div>
@@ -38,7 +38,7 @@
               <h3>Zutaten: </h3>
               <div class="d-flex mb-3">
                 <p>
-                  für <span class="servings"> <%= @recipe.serving %></span>
+                  für <span class="servings" style="font-weight: bolder; font-size: 18px"> <%= @recipe.serving %></span>
                   <%= @recipe.quantity %>
                 </p>
                 <div class="btn-small" id="plus">
@@ -56,7 +56,7 @@
               </ul>
               <% end %>
               <% else %>
-              <h3>Zutaten</h3>
+              <h3>Zutaten: </h3>
               <span> Bitte füge Zutaten zu dem Rezept hinzu.</span>
               <% end %>
             </div>
