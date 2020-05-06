@@ -2,7 +2,6 @@ textarea#recipe_description {
     height: 250px;
 }
 
-
 input#ingredient_dose {
     width: 100px;
 }
@@ -22,7 +21,6 @@ input.btn-shadow-small {
     margin-right: 20px;
 }
 
-
 .all-ingredients {
   height: 350px;
 }
@@ -32,7 +30,52 @@ input.btn-shadow-small {
     font-size: 20px;
 }
 
-
 .collapsable-form {
   margin-top: 40px;
+}
+
+
+/* Extra extra small devices (phones, 360px and down) */
+@media only screen and (max-width: 350px) {
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 350px) {
+  .form-group {
+    margin-bottom: 1rem;
+    margin-right: -6px;
+    width: -webkit-fill-available;
+}
+.form-group.integer.optional.recipe_serving.form-group-valid {
+    width: max-content;
+    margin-right: -67px;
+}
+  .details-one{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .details-two{
+    justify-content: start;
+  }
+
+  input#recipe_serving {
+    width: 50%;
+    margin-right: 10px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

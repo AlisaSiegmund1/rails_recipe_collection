@@ -4,11 +4,11 @@
       <div class="recipe-edit">
         <h3>Rezept</h3>
         <%= simple_form_for (@recipe) do |f| %>
-        <div class="d-flex">
+        <div class="details-one d-flex">
           <%= f.input :name %>
           <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:"Kategorie", selected: 2%>
         </div>
-        <div class="d-flex">
+        <div class="details-two d-flex">
           <%= f.input :serving, placeholder: 'z.B. 2', label:"Anzahl"%>
           <%= f.input :quantity, collection: ['Portionen', 'Stück'], label:"Einheit", selected: 1%>
         </div>
