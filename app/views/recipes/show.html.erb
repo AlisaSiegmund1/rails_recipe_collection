@@ -1,4 +1,4 @@
-<div class="base-container">
+<div class="recipe-base-container">
 
   <div class="content-container">
     <div class="recipe-show-banner">
@@ -31,62 +31,70 @@
       </div>
 
       <div class="recipe-container d-flex justify-content-between">
-        <div class="recipe-ingredients mb-3">
-          <% if @recipe.ingredients.empty? == false %>
-          <h3>Zutaten </h3>
-          <div class="d-flex mb-3">
-            <p>
-              für <span class="servings"> <%= @recipe.serving %></span>
-              <%= @recipe.quantity %>
-            </p>
-            <div class="btn-small" id="plus">
-              <p>+</p>
-            </div>
-            <div class="btn-small" id="minus">
-              <p>-</p>
-            </div>
-          </div>
-          <% @recipe.ingredients.each do |ingredient| %>
-          <ul>
-            <li>
-              <span class="amount-ingredient" style="font-weight: bolder"><%= ingredient.dose %></span> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
-            </li>
-          </ul>
-          <% end %>
-          <% else %>
-          <h3>Zutaten</h3>
-          <span> Bitte füge Zutaten zu dem Rezept hinzu.</span>
-          <% end %>
-
-          <div class="description">
-            <h3>Zubereitung:</h3>
-            <% if @recipe.step_ids.empty? == false %>
-            <% count = 0 %>
-            <% @recipe.step_ids.each do |step| %>
-            <% count += 1 %>
-            <div class="step-card"id="step-<%= step %>">
-              <div class="d-flex">
-                <div class="step-icon" style="position: relative;">
-                  <div class="icon">
-                    <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
-                  </div>
-                  <div class="step-id">
-                    <%=count%>
-                  </div>
+        <div class="row">
+          <div class="col-lg-5 col-sm-12">
+            <div class="recipe-ingredients">
+              <% if @recipe.ingredients.empty? == false %>
+              <h3>Zutaten: </h3>
+              <div class="d-flex mb-3">
+                <p>
+                  für <span class="servings"> <%= @recipe.serving %></span>
+                  <%= @recipe.quantity %>
+                </p>
+                <div class="btn-small" id="plus">
+                  <p>+</p>
                 </div>
-                <div class="step-content">
-                  <%= Step.find(step).content %>
+                <div class="btn-small" id="minus">
+                  <p>-</p>
                 </div>
               </div>
+              <% @recipe.ingredients.each do |ingredient| %>
+              <ul>
+                <li>
+                  <span class="amount-ingredient" style="font-weight: bolder"><%= ingredient.dose %></span> <%= ingredient.unit %> - <%= ingredient.description %>  </li>
+                </li>
+              </ul>
+              <% end %>
+              <% else %>
+              <h3>Zutaten</h3>
+              <span> Bitte füge Zutaten zu dem Rezept hinzu.</span>
               <% end %>
             </div>
-            <% else %>
-            <span> Da fehlt doch was - bitte füge eine Beschreibung der Zubereitung hinzu. </span>
+          </div>
+          <div class="col-lg-7 col-sm-12">
+
+        <div class="description">
+          <h3>Zubereitung:</h3>
+          <% if @recipe.step_ids.empty? == false %>
+          <% count = 0 %>
+          <% @recipe.step_ids.each do |step| %>
+          <% count += 1 %>
+          <div class="step-card"id="step-<%= step %>">
+            <div class="d-flex">
+              <div class="step-icon" style="position: relative;">
+                <div class="icon">
+                  <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
+                </div>
+                <div class="step-id">
+                  <%=count%>
+                </div>
+              </div>
+              <div class="step-content">
+                <%= Step.find(step).content %>
+              </div>
+            </div>
             <% end %>
           </div>
+          <% else %>
+          <span> Da fehlt doch was - bitte füge eine Beschreibung der Zubereitung hinzu. </span>
+          <% end %>
+          </div>
         </div>
+          </div>
+      </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 
