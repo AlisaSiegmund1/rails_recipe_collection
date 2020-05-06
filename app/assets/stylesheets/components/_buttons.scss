@@ -8,7 +8,10 @@
   font-weight:bold;
   transition: background 0.5s ease;
   color: black;
+}
 
+input[type=text]{
+  font-family: "Open Sans"
 }
 .btn-shadow:hover {
   padding: 15px 25px;
