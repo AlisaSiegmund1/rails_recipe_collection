@@ -1,37 +1,25 @@
-// .recipe-container  {
-//   // background-color: blue;
-
-// }
-
 .tags {
-  // background-color: yellow;
   height: 40px;
   width: 100%;
   margin-bottom: 10px;
-
 }
 
 .recipe-ingredients {
-  // background-color: red;
   width: 520px;
   margin-right: 20px;
   margin-left: 0;
 }
 
 p.description {
-  // background-color: white;
   margin: 0 0 0 5em;
   white-space: nowrap;
   width: 16em;
   text-overflow: ellipsis
-
 }
-
 
 ul li {
   margin-bottom: -10px;
 }
-
 
 i {
   color: black;
@@ -51,4 +39,32 @@ p {
 input.servings {
   width: 34px;
   margin-left: 10px;
+}
+
+
+
+
+/* Extra extra small devices (phones, 360px and down) */
+@media only screen and (max-width: 350px) {
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (min-width: 350px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
