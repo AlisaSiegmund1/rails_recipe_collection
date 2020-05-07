@@ -31,8 +31,8 @@ input.btn-shadow-small {
 @media only screen and (min-width: 350px) {
   .form-group {
     margin-bottom: 1rem;
-    margin-right: -6px;
-    width: -webkit-fill-available;
+    margin-right: 10px;
+    // width: -webkit-fill-available;
 }
 .form-group.integer.optional.recipe_serving.form-group-valid {
     width: max-content;
