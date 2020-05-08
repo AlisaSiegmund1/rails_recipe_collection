@@ -12,7 +12,7 @@
   position: absolute;
   top: 27px;
   width: 69%;
-  height: 0.5px;
+  height: 1.5px;
   background-color: black;
   z-index: 0;
 }
@@ -39,7 +39,7 @@
     width: 15px;
     height: 15px;
     background: white;
-    border: 0.5px solid black;
+    border: 1.5px solid black;
     // border-radius: 100%;
   }
 
@@ -62,8 +62,8 @@
 
     &:before {
       border-radius: 100%;
-      border: 0.5px solid black;
-      box-shadow: 2px 2px 0 0.3px black;
+      border: 3.5px solid black;
+      // box-shadow: 2px 2px 0 0.3px black;
 
       // animation: pulse 2s infinite;
     }
