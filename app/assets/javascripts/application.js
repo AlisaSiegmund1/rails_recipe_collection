@@ -1,7 +1,6 @@
 // = require rails-ujs
 // = require_tree .
 
-
 // Incrementation of Recipe Amounts -> adding and incereasing servings//
 let initialQuantityText = document.querySelector(".servings").textContent;
 let quantity = parseInt(initialQuantityText);
