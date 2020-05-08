@@ -1,24 +1,20 @@
-$grey:  #777;
-$grey2: #dfe3e4;
-$blue:  #2183dd;
-$green: #009900;
-$white: #fff;
-
 .progress {
   position: relative;
   display: flex;
+  justify-content: center;
   margin-bottom: 20px;
   padding-bottom: 70px;
+  padding-top: 20px;
   background-color:white;
 }
 
 .progress-track {
   position: absolute;
-  top: 5px;
-  width: 100%;
-  height: 5px;
-  background-color: $grey2;
-  z-index: -1;
+  top: 30px;
+  width: 69%;
+  height: 0.5px;
+  background-color: black;
+  z-index: 0;
 }
 
 // Each Step on the Progress Bar
@@ -35,16 +31,15 @@ $white: #fff;
 
   // Step's circle in default state
   &:before {
-    content: "\f00c";
+    content: "";
     display: flex;
     margin: 0 auto;
     margin-bottom: 10px;
-    width: 25px;
-    height: 25px;
-    background: $white;
-    border: 4px solid $grey2;
-    border-radius: 100%;
-    color: black;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 0.5px solid black;
+    // border-radius: 100%;
   }
 
   // Step's progress bar in default state
@@ -56,36 +51,38 @@ $white: #fff;
     width: 0%;
     transition: width 1s ease-in;
     height: 5px;
-    background: $grey2;
+    background: blue;
     z-index: -1;
   }
 
   // Step's active state
   &.is-active {
-    color: $blue;
+    color: black;
 
     &:before {
-      border: 4px solid $grey;
-      animation: pulse 2s infinite;
+      border: 0.5px solid black;
+      box-shadow: 3px 3px 0 0.5px black;
+
+      // animation: pulse 2s infinite;
     }
   }
 
   // Step's complete state
   &.is-complete {
-    color: $green;
+    color: black;
 
     // Step's circle in complete state
     &:before {
       // font-family: FontAwesome;
       font-size: 10px;
       color: black;
-      background: $green;
-      border: 4px solid transparent;
+      background: black;
+      border: 2px solid transparent;
     }
 
     // Step's progress bar in complete state
     &:after {
-      background: $blue;
+      background: blue;
       animation: nextStep 1s;
       animation-fill-mode: forwards;
     }

@@ -18,8 +18,8 @@
   </div>
   <div class="row justify-content-md-center">
     <div class="col-lg-6 col-md-8 col-sm-12 d-flex justify-content-between" style="background-color: white">
-      <%= link_to "Zurück", recipe_path(@recipe), class: "btn-shadow ml-3" %>
-      <%= f.submit "Weiter", class: "btn-shadow ml-3" %>
+      <%= link_to "Zurück", recipe_path(@recipe), class: "btn-shadow ml-3",id:"back" %>
+      <%= f.submit "Weiter", class: "btn-shadow ml-3", id:"next"%>
       <% end %>
     </div>
   </div>
