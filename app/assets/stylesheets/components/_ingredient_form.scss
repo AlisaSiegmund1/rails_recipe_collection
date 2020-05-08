@@ -4,17 +4,24 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 350px) {
-  input#ingredient_dose {
-    width: 120px;
+  .ingredient-form-container {
+    display: flex;
+    align-items: flex-end;
   }
-  .ingredients-details-one {
-    flex-wrap: wrap;
+  input.btn-shadow-small {
+    margin-bottom: 20px;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
+.ingredient-form-container {
+    display: flex;
+    align-items: flex-end;
+  }
+  input.btn-shadow-small {
+    margin-bottom: 20px;
+  }
 }
 
 @media only screen and (min-width: 600px) {
@@ -22,7 +29,8 @@
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .ingredient-details-one{
+  .form {
+    display: flex;
   }
   input[type=text] {
     font-family: "Open Sans";
@@ -30,6 +38,8 @@
   }
   .ingredient-form-container {
     display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */

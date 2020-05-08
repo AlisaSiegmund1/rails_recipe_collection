@@ -1,13 +1,17 @@
 <%= simple_form_for ([@recipe, @ingredient]) do |f| %>
 <div class="ingredient-form-container">
-  <div class="d-flex">
-    <%= f.input :dose, placeholder: 'z.B. 100', label:false%>
-    <%= f.input :unit , placeholder: 'gr', label:false%>
+  <div class="form">
+    <div class="d-flex">
+      <%= f.input :dose, placeholder: 'z.B. 100', label:false%>
+      <%= f.input :unit , placeholder: 'gr', label:false%>
+    </div>
+  <div class="ingredients-details-one d-flex">
+    <%= f.input :description, placeholder: 'Zucker', label:false %>
+
   </div>
-<div class="ingredients-details-one d-flex">
-  <%= f.input :description, placeholder: 'Zucker', label:false %>
+
+  </div>
   <%= f.submit "+", class: "btn-shadow-small" %>
-</div>
 <% end %>
 
 </div>
