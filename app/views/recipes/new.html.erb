@@ -21,7 +21,7 @@
       <%= simple_form_for (@recipe) do |f| %>
       <div class="details-one d-flex">
         <%= f.input :name %>
-        <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:"Kategorie", selected: 2%>
+        <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:"Kategorie"%>
       </div>
       <div class="details-two d-flex">
         <%= f.input :serving, placeholder: 'z.B. 2', label:"Anzahl"%>

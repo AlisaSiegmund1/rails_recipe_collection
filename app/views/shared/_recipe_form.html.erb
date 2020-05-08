@@ -1,0 +1,16 @@
+<div class="row justify-content-md-center">
+  <div class="col-lg-6 col-md-8 col-sm-12" style="background-color: white">
+    <div class="recipe-edit">
+      <%= simple_form_for (@recipe) do |f| %>
+      <div class="details-one d-flex">
+        <%= f.input :name %>
+        <%= f.input :category, collection: ['Herzhaft', 'Süß'], label:"Kategorie"%>
+      </div>
+      <div class="details-two d-flex">
+        <%= f.input :serving, placeholder: 'z.B. 2', label:"Anzahl"%>
+        <%= f.input :quantity, collection: ['Portionen', 'Stück'], label:"Einheit", selected: 1%>
+      </div>
+      <%= f.input :photo, as: :file, label: "Foto hochladen" %>
+    </div>
+  </div>
+</div>
