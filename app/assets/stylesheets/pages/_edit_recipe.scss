@@ -50,6 +50,10 @@ input.btn-shadow-small {
     width: 50%;
     margin-right: 10px;
   }
+
+  input#recipe_name {
+    width: -webkit-fill-available;
+}
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
