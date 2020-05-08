@@ -87,6 +87,8 @@ GEM
       sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    graphicsmagick (1.0.6)
+      subexec
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -206,6 +208,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    subexec (0.2.3)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -244,8 +247,10 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass (~> 5.6.1)
+  graphicsmagick
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
+  mini_magick
   pg (~> 0.21)
   pry-byebug
   pry-rails

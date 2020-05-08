@@ -1,4 +1,4 @@
-require "open-uri"
+# require "open-uri"
 
 puts "Creating Recipes"
 
@@ -21,20 +21,20 @@ recipes << recipe_fou
 
 puts "Created 4 Recipes #{recipes}"
 
-puts "Adding Photos to Recipes"
-file_one = URI.open('https://www.eat-this.org/wp-content/uploads/2019/09/einfacher_veganer_apfelkuchen_mit_streuseln-3-800x1200@2x.jpg')
-recipe_one.photo.attach(io: file, filename: 'recipe_one.png', content_type: 'image/png')
+# puts "Adding Photos to Recipes"
+# file_one = URI.open('https://www.eat-this.org/wp-content/uploads/2019/09/einfacher_veganer_apfelkuchen_mit_streuseln-3-800x1200@2x.jpg')
+# recipe_one.photo.attach(io: file_one, filename: 'recipe_one.png', content_type: 'image/png')
 
-file_two = URI.open('https://images.ctfassets.net/nf38yhm0afx3/6SthzyfX2DjphyFQbW92Hb/2bb478fc3a9f883e710b630a5d6ebee2/R361_Veganer_New_York_Cheesecake21.jpg?w=1646&h=1102&fit=thumb&q=60')
-recipe_two.photo.attach(io: file, filename: 'recipe_two.png', content_type: 'image/png')
+# file_two = URI.open('https://images.ctfassets.net/nf38yhm0afx3/6SthzyfX2DjphyFQbW92Hb/2bb478fc3a9f883e710b630a5d6ebee2/R361_Veganer_New_York_Cheesecake21.jpg?w=1646&h=1102&fit=thumb&q=60')
+# recipe_two.photo.attach(io: file_two, filename: 'recipe_two.png', content_type: 'image/png')
 
-file_thr = URI.open('https://www.eat-this.org/wp-content/uploads/2019/01/spaghetti-napoli-pasta-al-pomodoro-3-1280x854@2x.jpg')
-recipe_thr.photo.attach(io: file, filename: 'recipe_thr.png', content_type: 'image/png')
+# file_thr = URI.open('https://www.eat-this.org/wp-content/uploads/2019/01/spaghetti-napoli-pasta-al-pomodoro-3-1280x854@2x.jpg')
+# recipe_thr.photo.attach(io: file_thr, filename: 'recipe_thr.png', content_type: 'image/png')
 
-file_fou = URI.open('https://images.ctfassets.net/nf38yhm0afx3/KVJOWFyAjZmodjo8gP0ZR/cc1aa32d8878b5479d10558fac624671/kartoffelklossegulaschrotkraut-7.jpg?w=1646&h=1102&fit=thumb&q=60')
-recipe_fou.photo.attach(io: file, filename: 'recipe_fou.png', content_type: 'image/png')
+# file_fou = URI.open('https://images.ctfassets.net/nf38yhm0afx3/KVJOWFyAjZmodjo8gP0ZR/cc1aa32d8878b5479d10558fac624671/kartoffelklossegulaschrotkraut-7.jpg?w=1646&h=1102&fit=thumb&q=60')
+# recipe_fou.photo.attach(io: file_fou, filename: 'recipe_fou.png', content_type: 'image/png')
 
-puts "Added Photos to Recipes"
+# puts "Added Photos to Recipes"
 
 # recipe_ingredients = []
 
