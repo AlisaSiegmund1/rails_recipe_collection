@@ -1,12 +1,12 @@
 input.btn-shadow-small {
-    padding-bottom: 0px;
-    padding-top: 0px;
-    height: 30px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  height: 30px;
 }
 
 .form-group {
-    margin-bottom: 1rem;
-    margin-right: 20px;
+  margin-bottom: 1rem;
+  margin-right: 20px;
 }
 
 .all-ingredients {
@@ -14,8 +14,8 @@ input.btn-shadow-small {
 }
 
 .fa-trash:before {
-    content: "\f1f8";
-    font-size: 20px;
+  content: "\f1f8";
+  font-size: 20px;
 }
 
 .collapsable-form {
@@ -33,11 +33,11 @@ input.btn-shadow-small {
     margin-bottom: 1rem;
     margin-right: 10px;
     width: -webkit-fill-available;
-}
-.form-group.integer.optional.recipe_serving.form-group-valid {
+  }
+  .form-group.integer.optional.recipe_serving.form-group-valid {
     width: max-content;
     margin-right: -67px;
-}
+  }
   .details-one{
     flex-wrap: wrap;
     justify-content: center;
@@ -53,7 +53,7 @@ input.btn-shadow-small {
 
   input#recipe_name {
     width: -webkit-fill-available;
-}
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

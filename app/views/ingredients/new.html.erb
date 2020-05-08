@@ -1,37 +1,37 @@
 <div class="base-container">
   <div class="row justify-content-md-center">
-  <div class="col-lg-6 col-md-8 col-sm-12 justify-content-md-center" style="background-color: white">
-    <div class="progress">
-      <div class="progress-track"></div>
-      <div id="step1" class="progress-step is-complete">
-        Rezept Details
-      </div>
-      <div id="step2" class="progress-step is-active">
-        Zutaten
-      </div>
-      <div id="step3" class="progress-step">
-        Zubereitung
+    <div class="col-lg-6 col-md-8 col-sm-12 justify-content-md-center" style="background-color: white">
+      <div class="progress">
+        <div class="progress-track"></div>
+        <div id="step1" class="progress-step is-complete">
+          Rezept Details
+        </div>
+        <div id="step2" class="progress-step is-active">
+          Zutaten
+        </div>
+        <div id="step3" class="progress-step">
+          Zubereitung
+        </div>
       </div>
     </div>
   </div>
-</div>
   <div class="row justify-content-md-center">
     <div class="col-lg-6 col-md-8 col-sm-12" style="background-color: white">
       <div class="ingredient-container mb-3">
         <h3>Zutaten</h3>
         <% if @recipe.ingredients.empty? == false %>
-          <% @recipe.ingredients.each do |ingredient| %>
-            <ul>
-              <li>
-                <div class="d-flex">
-                  <%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>
-                  <%= render 'shared/delete_ingredient', recipe: @recipe, ingredient: ingredient %>
-                </div>
-              </li>
-            </ul>
-          <% end %>
+        <% @recipe.ingredients.each do |ingredient| %>
+        <ul>
+          <li>
+            <div class="d-flex">
+              <%= ingredient.dose %> <%= ingredient.unit %> - <%= ingredient.description %>
+              <%= render 'shared/delete_ingredient', recipe: @recipe, ingredient: ingredient %>
+            </div>
+          </li>
+        </ul>
+        <% end %>
         <% else %>
-          <p> Bitte füge Zutaten zu dem Rezept hinzu.</p>
+        <p> Bitte füge Zutaten zu dem Rezept hinzu.</p>
         <% end %>
       </div>
       <div class="collapsable-form">
