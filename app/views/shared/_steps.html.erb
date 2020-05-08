@@ -1,5 +1,10 @@
-<%= simple_form_for ([@recipe, @step]) do |f| %>
-<%= f.input :content, label: false %>
-<%= f.submit "Speichern", class: "btn-shadow" %>
-<% end %>
+<div class="details-one">
+  <%= simple_form_for ([@recipe, @step]) do |f| %>
+  <%= f.input :content, label: false %>
+  <div class="submit-button">
+    <%= f.submit "+", class: "btn-shadow-small" %>
+  </div>
+  <% end %>
+
+</div>
 
