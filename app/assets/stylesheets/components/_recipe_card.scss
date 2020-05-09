@@ -44,8 +44,8 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .recipe-card {
-    margin: 20px;
-    margin-bottom: 30px;
+   margin-bottom: 100px;
+  margin-right: 120px
   }
 
   .recipe-card-img-top {
@@ -64,6 +64,7 @@
     text-align: center;
     padding: 5px 0;
     width: 200px;
+    margin-top: 67px;
 
     a {
       color: white;
