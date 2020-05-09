@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-md-center" id="form-container">
     <div class="col-lg-6 col-md-8 col-sm-12" style="background-color: white">
       <div class="prep-container">
         <% if !@recipe.step_ids.empty? %>
@@ -40,7 +40,6 @@
             <div class="d-flex justify-content-end">
               <%= render 'shared/edit_step', recipe: @recipe, step: step %>
               <%= render 'shared/delete_step', recipe: @recipe, step: step %>
-
             </div>
           </div>
           <div class="collapse" id="collapseEditStep<%= step %>">
@@ -53,7 +52,7 @@
          <p> Bitte füge Zutaten zu dem Rezept hinzu.</p>
          <% end %>
 
-        <div>
+        <div class="collapsable-form">
           <%= render 'shared/add_step'%>
         </div>
       </div>
