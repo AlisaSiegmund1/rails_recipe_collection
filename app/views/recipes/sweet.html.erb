@@ -1,4 +1,9 @@
   <div class="content-container">
     <%= render 'shared/filterbar' %>
+    <div class="recipe-count">
+    <h4>
+      Süße Rezepte (<%= @recipes.count %>)
+    </h4>
+  </div>
     <%= render 'shared/index' %>
   </div>
