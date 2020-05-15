@@ -6,6 +6,12 @@
   text-align: center;
 }
 
+.recipe-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 0px;
+  justify-content: center;
+}
 /* Extra extra small devices (phones, 360px and down) */
 @media only screen and (max-width: 350px) {
 }
@@ -16,9 +22,6 @@
     margin: 10px 10px;
   }
   .recipe-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0px 0px;
     width: 100%;
     margin-left: 1%;
   }
@@ -44,9 +47,6 @@
     margin: 20px 40px;
   }
 .recipe-card-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0px 0px;
   width: 110%;
   margin-left: -2%;
 }
