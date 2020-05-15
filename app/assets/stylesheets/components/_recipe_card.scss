@@ -1,5 +1,35 @@
 /* Extra extra small devices (phones, 360px and down) */
 @media only screen and (max-width: 350px) {
+    .recipe-card {
+    margin-right: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    .recipe-card-img-top {
+      height: 150px;
+      width: 100px;
+    }
+  }
+
+
+  img#index-recipe {
+    height: 180px;
+    width: 150px;
+    object-fit: cover;
+  }
+
+  .recipe-card-body {
+    background-color: black;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    width: 150px;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -44,7 +74,7 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .recipe-card {
-   margin-bottom: 100px;
+   margin-bottom: 120px;
    margin-left: 0px;
    margin-top: 0px;
    margin-right: 120px
@@ -73,6 +103,7 @@ img#index-recipe{
     text-decoration: none;
   }
 }
+
 
 }
 
