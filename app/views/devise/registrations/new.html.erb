@@ -21,10 +21,11 @@
     <%= f.input :password_confirmation,
           required: true,
           input_html: { autocomplete: "new-password" } %>
+    <%= f.input :photo, as: :file, label: "Foto hochladen" %>
   </div>
 
   <div class="form-actions btn-shadow", id="login">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Registrieren" %>
   </div>
   <% end %>
 
