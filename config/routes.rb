@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'recipes#index'
 
+  get 'profile', to: 'pages#profile', as: :username
   get 'filterSweet', to: 'recipes#sweet'
   get 'filterSavory', to: 'recipes#savory'
 
