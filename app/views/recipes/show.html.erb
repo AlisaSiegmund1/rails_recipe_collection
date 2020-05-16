@@ -7,6 +7,9 @@
         <% else %>
         <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)))'>
           <% end %>
+          <div class="user-info">
+          <% @user.email %>
+          </div>
           <div class="d-flex flex-column align-items-center">
             <%= @recipe.name %>
             <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
@@ -63,40 +66,40 @@
           </div>
           <div class="col-lg-7 col-sm-12">
 
-        <div class="description">
-          <h3>Zubereitung:</h3>
-          <% if @recipe.step_ids.empty? == false %>
-          <% count = 0 %>
-          <% @recipe.step_ids.each do |step| %>
-          <% count += 1 %>
-          <div class="step-card"id="step-<%= step %>">
-            <div class="d-flex">
-              <div class="step-icon" style="position: relative;">
-                <div class="icon">
-                  <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
+            <div class="description">
+              <h3>Zubereitung:</h3>
+              <% if @recipe.step_ids.empty? == false %>
+              <% count = 0 %>
+              <% @recipe.step_ids.each do |step| %>
+              <% count += 1 %>
+              <div class="step-card"id="step-<%= step %>">
+                <div class="d-flex">
+                  <div class="step-icon" style="position: relative;">
+                    <div class="icon">
+                      <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588574765/icon_nkwwtg.png") %>
+                    </div>
+                    <div class="step-id">
+                      <%=count%>
+                    </div>
+                  </div>
+                  <div class="step-content">
+                    <%= Step.find(step).content %>
+                  </div>
                 </div>
-                <div class="step-id">
-                  <%=count%>
-                </div>
+                <% end %>
               </div>
-              <div class="step-content">
-                <%= Step.find(step).content %>
-              </div>
+              <% else %>
+              <p>
+                Da fehlt doch etwas - bitte füge eine Beschreibung der Zubereitung hinzu.
+              </p>
+              <% end %>
             </div>
-            <% end %>
-          </div>
-          <% else %>
-          <p>
-            Da fehlt doch etwas - bitte füge eine Beschreibung der Zubereitung hinzu.
-          </p>
-          <% end %>
           </div>
         </div>
-          </div>
-      </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 

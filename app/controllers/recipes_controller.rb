@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
 
   def show
     set_recipe
+    @user = User.find(@recipe.user_id)
 
 
   end
