@@ -8,7 +8,7 @@ puts "Creating Recipes"
 
 recipes = []
 r_names = ["Apple Cake", "Cheese Cake", "Spaghetti Pomodoro", "Veganes Gulasch"]
-r_cat = ["savory", "sweet"]
+r_cat = ["Herzhaft", "Süß"]
 # r_img = cl_image_path("9hBAV7M5fcpZB8eNNv3GRnwp.png")
 r_img = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
 
