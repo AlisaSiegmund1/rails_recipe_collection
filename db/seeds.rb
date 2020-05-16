@@ -1,4 +1,8 @@
 # require "open-uri"
+puts "Creating User"
+a_user = []
+a_user << User.create!(email: "alisa.siegmund@gmail.com", password: "123456", password_confirmation: "123456")
+puts "Created 1 User..."
 
 puts "Creating Recipes"
 
@@ -9,10 +13,10 @@ r_cat = ["savory", "sweet"]
 r_img = "https://res.cloudinary.com/siggimsiggi/image/upload/v1580572763/9hBAV7M5fcpZB8eNNv3GRnwp.png"
 
 
-recipe_one = Recipe.create!(name: r_names[0], category: r_cat[1])
-recipe_two = Recipe.create!(name: r_names[1], category: r_cat[1])
-recipe_thr = Recipe.create!(name: r_names[2], category: r_cat[0])
-recipe_fou = Recipe.create!(name: r_names[3], category: r_cat[0])
+recipe_one = Recipe.create!(name: r_names[0], category: r_cat[1], user_id: 1)
+recipe_two = Recipe.create!(name: r_names[1], category: r_cat[1], user_id: 1)
+recipe_thr = Recipe.create!(name: r_names[2], category: r_cat[0], user_id: 1)
+recipe_fou = Recipe.create!(name: r_names[3], category: r_cat[0], user_id: 1)
 
 recipes << recipe_one
 recipes << recipe_two
@@ -54,9 +58,6 @@ puts "Created 4 Recipes #{recipes}"
 # puts "Adding 3 Ingredients to each Recipe"
 
 
-puts "Creating User"
-a_user = []
-a_user << User.create!(email: "alisa.siegmund@gmail.com", password: "123456", password_confirmation: "123456")
-puts "Created 1 User..."
+
 
 
