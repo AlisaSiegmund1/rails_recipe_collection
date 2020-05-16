@@ -1,11 +1,15 @@
 class RecipesController < ApplicationController
   def index
+    @publishedRecipes = []
     if params[:category_type].blank?
-      @recipes = Recipe.all
+      Recipe.all.each do |recipe|
+        @publishedRecipes << recipe if recipe.publish == true
+      end
     else
       @recipes = Recipe.select { |r| r[:name] == params[:category_type]}
     end
-    # @recipes = Recipe.all
+
+
   end
 
   def show
@@ -46,11 +50,19 @@ class RecipesController < ApplicationController
   end
 
   def sweet
-    @recipes = Recipe.where(category: "Süß")
+    @publishedRecipes = []
+    Recipe.all.each do |recipe|
+        @publishedRecipes << recipe if recipe.publish == true
+      end
+    @publishedRecipes = Recipe.where(category: "Süß")
   end
 
   def savory
-    @recipes = Recipe.where(category: "Herzhaft")
+    @publishedRecipes = []
+    Recipe.all.each do |recipe|
+        @publishedRecipes << recipe if recipe.publish == true
+      end
+    @publishedRecipes = Recipe.where(category: "Herzhaft")
   end
 
   private

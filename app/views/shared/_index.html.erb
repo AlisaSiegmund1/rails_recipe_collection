@@ -1,7 +1,6 @@
 <div class="center-container">
   <div class="recipe-card-container">
-    <% @recipes.each do |recipe| %>
-     <% if recipe.publish == true %>
+    <% @publishedRecipes.each do |recipe| %>
       <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
       <div class="recipe-card">
         <div class="recipe-card-img-top">
@@ -21,6 +20,5 @@
         </div>
       </div>
       <% end %>
-    <% end %>
   </div>
 </div>
