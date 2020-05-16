@@ -2,14 +2,15 @@
 
   <div class="content-container">
     <div class="recipe-show-banner">
+      <div class="user-info">
+            <span style="font-weight: normal"> von </span>
+            <%= link_to @user.username, '#'%>
+      </div>
       <% if @recipe.photo.attached? %>
       <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @recipe.photo.key%>)'>
         <% else %>
         <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)))'>
           <% end %>
-          <div class="user-info">
-          <% @user.email %>
-          </div>
           <div class="d-flex flex-column align-items-center">
             <%= @recipe.name %>
             <div class="btn-category d-flex justify-content-center" style="font-size: 15px">
