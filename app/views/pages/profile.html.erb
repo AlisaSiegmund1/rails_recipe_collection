@@ -1,15 +1,19 @@
-<div class="recipe-base-container">
-
-  <div class="content-container">
-    <div class="user-profile-info">
-      <div class="profile-pic">
-        <%= cl_image_tag @user.photo %>
-      </div>
-      <div class="profile-info">
-        <%= @user.username %>
-        <p>Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>) <p>
+<div class="base-container">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-8 col-md-8 col-sm-12 justify-content-md-center">
+      <div class="user-profile-info">
+        <div class="profile-pic">
+          <%= cl_image_tag @user.photo %>
+        </div>
+        <div class="profile-info">
+          <%= @user.username %>
+          <p>Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>) </p>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-lg-8 col-md-8 col-sm-12 justify-content-md-center">
       <div class="user-recipes">
         <div class="recipe-card-container">
           <%  @userPublishedRecipes.each do |recipe| %>
@@ -34,7 +38,8 @@
           <% end %>
         </div>
       </div>
-
     </div>
   </div>
+
 </div>
+
