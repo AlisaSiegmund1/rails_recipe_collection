@@ -3,7 +3,7 @@
     <div class="col-lg-8 col-md-8 col-sm-12 justify-content-md-center">
       <div class="user-profile-info">
         <div class="profile-pic">
-          <%= cl_image_tag @user.photo %>
+          <%= cl_image_url @user.photo.key %>
         </div>
         <div class="profile-info">
           <%= @user.username %>

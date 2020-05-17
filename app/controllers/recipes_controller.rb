@@ -50,16 +50,16 @@ class RecipesController < ApplicationController
   def sweet
     @publishedRecipes = []
     Recipe.all.each do |recipe|
-        @publishedRecipes << recipe if recipe.publish == true
-      end
+      @publishedRecipes << recipe if recipe.publish == true
+    end
     @publishedRecipes = Recipe.where(category: "Süß")
   end
 
   def savory
     @publishedRecipes = []
     Recipe.all.each do |recipe|
-        @publishedRecipes << recipe if recipe.publish == true
-      end
+      @publishedRecipes << recipe if recipe.publish == true
+    end
     @publishedRecipes = Recipe.where(category: "Herzhaft")
   end
 

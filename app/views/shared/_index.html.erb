@@ -1,28 +1,28 @@
 <div class="center-container">
-<div class="row justify-content-md-center">
+  <div class="row justify-content-md-center">
     <div class="col-lg-12 col-md-8 col-sm-12 justify-content-md-center">
-  <div class="recipe-card-container">
-    <% @publishedRecipes.each do |recipe| %>
-      <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
-      <div class="recipe-card">
-        <div class="recipe-card-img-top">
-          <% if recipe.photo.attached? %>
-          <%= cl_image_tag recipe.photo.key, crop: :fill, id: "index-recipe" %>
-          <% else %>
-          <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588505411/Rectangle_ttmqdc.png", id: "index-recipe") %>
-          <% end %>
+      <div class="recipe-card-container">
+        <% @publishedRecipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
+        <div class="recipe-card">
+          <div class="recipe-card-img-top">
+            <% if recipe.photo.attached? %>
+            <%= cl_image_tag recipe.photo.key, crop: :fill, id: "index-recipe" %>
+            <% else %>
+            <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588505411/Rectangle_ttmqdc.png", id: "index-recipe") %>
+            <% end %>
+          </div>
+          <div class="recipe-card-body">
+            <% if recipe.name.length <= 22 %>
+            <%= link_to recipe.name, recipe_path(recipe) %>
+            <% else %>
+            <%= link_to recipe.name[0..22], recipe_path(recipe) %>
+            <% end %>
+            <% end %>
+          </div>
         </div>
-        <div class="recipe-card-body">
-          <% if recipe.name.length <= 22 %>
-          <%= link_to recipe.name, recipe_path(recipe) %>
-          <% else %>
-          <%= link_to recipe.name[0..22], recipe_path(recipe) %>
-          <% end %>
-          <% end %>
-        </div>
+        <% end %>
       </div>
-      <% end %>
+    </div>
   </div>
-</div>
-</div>
 </div>
