@@ -8,15 +8,11 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.select { |r| r[:name] == params[:category_type]}
     end
-
-
   end
 
   def show
     set_recipe
     @user = User.find(@recipe.user_id)
-
-
   end
 
   def new
@@ -25,9 +21,11 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user_id = current_user.id
     if @recipe.save
       redirect_to new_recipe_ingredient_path(@recipe)
     else
+      raise
       render :new
     end
   end
@@ -73,7 +71,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :category, :photo, :quantity, :serving)
+    params.require(:recipe).permit(:name, :category, :photo, :quantity, :serving, :pusblish)
   end
 
 end
