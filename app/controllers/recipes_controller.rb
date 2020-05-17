@@ -25,7 +25,6 @@ class RecipesController < ApplicationController
     if @recipe.save
       redirect_to new_recipe_ingredient_path(@recipe)
     else
-      raise
       render :new
     end
   end
@@ -71,7 +70,7 @@ class RecipesController < ApplicationController
   end
 
   def recipe_params
-    params.require(:recipe).permit(:name, :category, :photo, :quantity, :serving, :pusblish)
+    params.require(:recipe).permit(:name, :category, :photo, :quantity, :serving, :publish)
   end
 
 end

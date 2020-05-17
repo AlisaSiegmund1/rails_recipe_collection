@@ -20,19 +20,20 @@
         </div>
       </div>
 
-
-      <div class="tags d-flex justify-content-between">
-        <div class="flex-grow-1">
+      <% if current_user.id == @recipe.user_id %>
+        <div class="tags d-flex justify-content-between">
+          <div class="flex-grow-1">
+          </div>
+          <%= link_to edit_recipe_path(@recipe) do %>
+          <i class="fas fa-pen"></i>
+          <% end %>
+          <%= link_to recipe_path(@recipe),
+          method: :delete,
+          data: { confirm: "Bist du sicher?" } do %>
+          <i class="fas fa-trash"></i>
+          <% end %>
         </div>
-        <%= link_to edit_recipe_path(@recipe) do %>
-        <i class="fas fa-pen"></i>
         <% end %>
-        <%= link_to recipe_path(@recipe),
-        method: :delete,
-        data: { confirm: "Bist du sicher?" } do %>
-        <i class="fas fa-trash"></i>
-        <% end %>
-      </div>
 
       <div class="recipe-container d-flex justify-content-between">
         <div class="row">
