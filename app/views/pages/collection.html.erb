@@ -1,7 +1,4 @@
 <div class="center-container">
-
-<%= cl_image_tag @user.photo %>
-
   <h3>Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>)</h3>
   <div class="recipe-card-container">
     <%  @userPublishedRecipes.each do |recipe| %>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'recipes#index'
 
   get 'profile', to: 'pages#profile', as: :username
+  get 'collection', to: 'pages#collection'
 
   get 'filterSweet', to: 'recipes#sweet'
   get 'filterSavory', to: 'recipes#savory'

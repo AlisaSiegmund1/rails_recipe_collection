@@ -14,8 +14,20 @@ class PagesController < ApplicationController
 
 
     @user.recipe_ids.each do |recipe_id|
+      Recipe.find(recipe_id).publish == true ? @userPublishedRecipes << Recipe.find(recipe_id) : @userUnPublishedRecipes << Recipe.find(recipe_id)
+    end
+  end
+
+  def collection
+   @user = current_user
+
+   @userPublishedRecipes = []
+   @userUnPublishedRecipes = []
+
+
+   @user.recipe_ids.each do |recipe_id|
     Recipe.find(recipe_id).publish == true ? @userPublishedRecipes << Recipe.find(recipe_id) : @userUnPublishedRecipes << Recipe.find(recipe_id)
   end
 
-  end
+end
 end
