@@ -1,11 +1,16 @@
 <div class="index-container">
   <div class="content-container">
     <%= render 'shared/filterbar' %>
-    <div class="recipe-count">
-      <h4>
-        Rezepte (<%= @publishedRecipes.count %>)
-      </h4>
-    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-lg-12 col-md-8 col-sm-12 justify-content-md-center">
+          <div class="recipe-count">
+            <h4>
+              Rezepte (<%= @publishedRecipes.count %>)
+            </h4>
+          </div>
+        </div>
+      </div>
     <%= render 'shared/index' %>
   </div>
 </div>
