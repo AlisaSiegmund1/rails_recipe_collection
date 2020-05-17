@@ -27,8 +27,8 @@
         <%= f.input :serving, placeholder: 'z.B. 2', label:"Anzahl"%>
         <%= f.input :quantity, collection: ['Portionen', 'Stück'], label:"Einheit", selected: 1%>
       </div>
-      <%= f.input :publish, as: :radio_buttons, label:"Veröffentlichen"%>
       <%= f.input :photo, as: :file, label: "Foto hochladen" %>
+      <%= f.input :publish, as: :radio_buttons, label:"Veröffentlichen?"%>
     </div>
   </div>
 </div>
