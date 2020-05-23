@@ -31,13 +31,13 @@
     margin-top: 20px;
     margin-bottom: -18px;
   }
-   #form-container {
+  #form-container {
     min-height: 350px;
   }
 
   .center-container {
     margin-left: 6%;
-}
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -46,11 +46,11 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-.recipe-count{
-  margin-top: 20px;
-  margin-left: 1%;
-  margin-bottom: 20px;
-}
+  .recipe-count{
+    margin-top: 20px;
+    margin-left: 1%;
+    margin-bottom: 20px;
+  }
 
 }
 
@@ -58,6 +58,9 @@
 @media only screen and (min-width: 992px) {
   #form-container {
     min-height: 400px;
+  }
+  .center-container {
+    margin-left: 6%;
   }
 
 }
