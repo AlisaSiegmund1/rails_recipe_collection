@@ -2,17 +2,12 @@
   <div class="row justify-content-md-center">
     <div class="col-lg-8 col-md-8 col-sm-12 justify-content-md-center">
       <div class="user-profile-info">
-
-
         <div class="profile-pic d-flex justify-content-center">
           <%#= cl_image_url @user.photo.key %>
           <div class="default-img">
             <%= @user.username[0] %>
           </div>
-
-
         </div>
-
         <div class="profile-info">
           <%= @user.username %>
           <p>Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>) </p>
