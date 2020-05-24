@@ -5,12 +5,14 @@
         <div class="profile-pic d-flex justify-content-center">
           <%#= cl_image_url @user.photo.key %>
           <div class="default-img">
-            <%= @user.username[0] %>
+            <%=@user.username[0] %>
           </div>
         </div>
         <div class="profile-info">
-          <%= @user.username %>
-          <p>Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>) </p>
+          <h4 style="margin-bottom: 20px;">
+            <%= @user.username %>
+          </h4>
+          <h5>Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>) </h5>
         </div>
       </div>
     </div>
@@ -43,6 +45,5 @@
       </div>
     </div>
   </div>
-
 </div>
 

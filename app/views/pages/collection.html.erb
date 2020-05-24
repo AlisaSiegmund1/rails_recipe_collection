@@ -3,74 +3,69 @@
     <div class="col-lg-8 col-md-8 col-sm-12 justify-content-md-center">
 
 
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Rezepte</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Entwürfe</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <h4 style="text-align: center">Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>)</h4>
-          <div class="recipe-card-container">
-            <%  @userPublishedRecipes.each do |recipe| %>
-            <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
-            <div class="recipe-card">
-              <div class="recipe-card-img-top">
-                <% if recipe.photo.attached? %>
-                <%= cl_image_tag recipe.photo.key, crop: :fill, id: "index-recipe" %>
-                <% else %>
-                <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588505411/Rectangle_ttmqdc.png", id: "index-recipe") %>
-                <% end %>
-              </div>
-              <div class="recipe-card-body">
-                <% if recipe.name.length <= 15 %>
-                <%= link_to recipe.name, recipe_path(recipe) %>
-                <% else %>
-                <%= link_to recipe.name[0..15], recipe_path(recipe) %>
-                <% end %>
-                <% end %>
-              </div>
-            </div>
+      <div class="card card-body d-flex justify-content-center align-items-center flex-row">
+        <div class="filter-category" style="font-size: 15px">
+          <a href="#published">Rezepte</a>
+        </div>
+        <div class="filter-category" style="font-size: 15px">
+          <a href="#draft">Entwürfe</a>
+        </div>
+      </div>
+
+      <a id="published">
+        <h5 style="text-align: center">Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>)</h5>
+      </a>
+      <div class="recipe-card-container">
+        <%  @userPublishedRecipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
+        <div class="recipe-card">
+          <div class="recipe-card-img-top">
+            <% if recipe.photo.attached? %>
+            <%= cl_image_tag recipe.photo.key, crop: :fill, id: "index-recipe" %>
+            <% else %>
+            <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588505411/Rectangle_ttmqdc.png", id: "index-recipe") %>
+            <% end %>
+          </div>
+          <div class="recipe-card-body">
+            <% if recipe.name.length <= 15 %>
+            <%= link_to recipe.name, recipe_path(recipe) %>
+            <% else %>
+            <%= link_to recipe.name[0..15], recipe_path(recipe) %>
+            <% end %>
             <% end %>
           </div>
         </div>
+        <% end %>
       </div>
-      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-
-        <h4 style="text-align: center">Entwürfe (<%=@userUnPublishedRecipes.count%>)</h4>
-
-        <div class="recipe-card-container">
-          <%  @userUnPublishedRecipes.each do |recipe| %>
-          <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
-          <div class="recipe-card">
-            <div class="recipe-card-img-top">
-              <% if recipe.photo.attached? %>
-              <%= cl_image_tag recipe.photo.key, crop: :fill, id: "index-recipe" %>
-              <% else %>
-              <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588505411/Rectangle_ttmqdc.png", id: "index-recipe") %>
-              <% end %>
-            </div>
-            <div class="recipe-card-body">
-              <% if recipe.name.length <= 15 %>
-              <%= link_to recipe.name, recipe_path(recipe) %>
-              <% else %>
-              <%= link_to recipe.name[0..15], recipe_path(recipe) %>
-              <% end %>
-              <% end %>
-            </div>
-          </div>
-          <% end %>
-        </div>
-
-
-      </div>
-
     </div>
-
   </div>
-
+  <div class="row justify-content-md-center">
+    <div class="col-lg-8 col-md-8 col-sm-12 justify-content-md-center">
+      <a id="draft">
+        <h5 style="text-align: center">Entwürfe (<%=@userUnPublishedRecipes.count%>)</h5>
+      </a>
+      <div class="recipe-card-container">
+        <%  @userUnPublishedRecipes.each do |recipe| %>
+        <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
+        <div class="recipe-card">
+          <div class="recipe-card-img-top">
+            <% if recipe.photo.attached? %>
+            <%= cl_image_tag recipe.photo.key, crop: :fill, id: "index-recipe" %>
+            <% else %>
+            <%= cl_image_tag("https://res.cloudinary.com/siggimsiggi/image/upload/v1588505411/Rectangle_ttmqdc.png", id: "index-recipe") %>
+            <% end %>
+          </div>
+          <div class="recipe-card-body">
+            <% if recipe.name.length <= 15 %>
+            <%= link_to recipe.name, recipe_path(recipe) %>
+            <% else %>
+            <%= link_to recipe.name[0..15], recipe_path(recipe) %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

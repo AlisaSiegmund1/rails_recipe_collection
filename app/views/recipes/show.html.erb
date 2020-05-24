@@ -3,8 +3,8 @@
   <div class="content-container">
     <div class="recipe-show-banner">
       <div class="user-info">
-            <span style="font-weight: normal"> von </span>
-            <%= link_to @user.username, root_path%>
+        <span style="font-weight: normal"> von </span>
+        <%= link_to @user.username, root_path%>
       </div>
       <% if @recipe.photo.attached? %>
       <div class='card-category' style='background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=cl_image_path @recipe.photo.key%>)'>
@@ -21,22 +21,22 @@
       </div>
 
       <% if current_user.id == @recipe.user_id %>
-        <div class="tags d-flex justify-content-between">
-          <div class="flex-grow-1">
-          </div>
-          <%= link_to edit_recipe_path(@recipe) do %>
-          <i class="fas fa-pen"></i>
-          <% end %>
-          <%= link_to recipe_path(@recipe),
-          method: :delete,
-          data: { confirm: "Bist du sicher?" } do %>
-          <i class="fas fa-trash"></i>
-          <% end %>
+      <div class="tags d-flex justify-content-between">
+        <div class="flex-grow-1">
         </div>
-        <% else %>
-          <div stlye="height: 20px">
-          </div>
+        <%= link_to edit_recipe_path(@recipe) do %>
+        <i class="fas fa-pen"></i>
         <% end %>
+        <%= link_to recipe_path(@recipe),
+        method: :delete,
+        data: { confirm: "Bist du sicher?" } do %>
+        <i class="fas fa-trash"></i>
+        <% end %>
+      </div>
+      <% else %>
+      <div stlye="height: 20px">
+      </div>
+      <% end %>
 
       <div class="recipe-container d-flex justify-content-between">
         <div class="row">
