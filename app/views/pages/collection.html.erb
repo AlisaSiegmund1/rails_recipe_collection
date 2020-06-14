@@ -1,8 +1,17 @@
 <div class="base-container">
   <div class="row justify-content-md-center">
     <div class="col-lg-8 col-md-8 col-sm-12 justify-content-md-center">
-
-      <h3 style="text-align: center">Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>)</h3>
+      <div class="card card-body d-flex justify-content-center align-items-center flex-row">
+        <div class="filter-category" style="font-size: 15px">
+          <a href="#published">Rezepte</a>
+        </div>
+        <div class="filter-category" style="font-size: 15px">
+          <a href="#draft">Entwürfe</a>
+        </div>
+      </div>
+      <a id="published">
+        <h5 style="text-align: center">Veröffentlichte Rezepte (<%=@userPublishedRecipes.count%>)</h5>
+      </a>
       <div class="recipe-card-container">
         <%  @userPublishedRecipes.each do |recipe| %>
         <%= link_to recipe_path(recipe), class: 'go-away-url' do %>
@@ -29,9 +38,9 @@
   </div>
   <div class="row justify-content-md-center">
     <div class="col-lg-8 col-md-8 col-sm-12 justify-content-md-center">
-
-      <h3 style="text-align: center">Entwürfe (<%=@userUnPublishedRecipes.count%>)</h3>
-
+      <a id="draft">
+        <h5 style="text-align: center">Entwürfe (<%=@userUnPublishedRecipes.count%>)</h5>
+      </a>
       <div class="recipe-card-container">
         <%  @userUnPublishedRecipes.each do |recipe| %>
         <%= link_to recipe_path(recipe), class: 'go-away-url' do %>

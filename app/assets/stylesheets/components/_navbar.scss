@@ -5,7 +5,9 @@
   position: absolute;
   a {
     color: black;
+    font-weight: 600;
     text-decoration: none;
+    text-shadow: 2px 2px 0px #F5BDD0;
   }
   a:hover {
     color: black;
@@ -32,7 +34,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-   margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .navbar-lewagon .navbar-collapse {

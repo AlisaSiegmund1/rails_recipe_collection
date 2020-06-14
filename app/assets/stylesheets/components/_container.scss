@@ -11,11 +11,16 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0px 0px;
+  margin-bottom: 50px;
 }
 
 .center-container {
   display: flex;
   justify-content: center;
+}
+
+.index-container{
+  margin-bottom: 50px;
 }
 /* Extra extra small devices (phones, 360px and down) */
 @media only screen and (max-width: 350px) {
@@ -27,8 +32,12 @@
     margin-top: 20px;
     margin-bottom: -18px;
   }
-   #form-container {
+  #form-container {
     min-height: 350px;
+  }
+
+  .center-container {
+    margin-left: 6%;
   }
 }
 
@@ -38,11 +47,11 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-.recipe-count{
-  margin-top: 20px;
-  margin-left: 1%;
-  margin-bottom: 20px;
-}
+  .recipe-count{
+    margin-top: 20px;
+    margin-left: 1%;
+    margin-bottom: 20px;
+  }
 
 }
 
@@ -51,6 +60,7 @@
   #form-container {
     min-height: 400px;
   }
+
 
 }
 
